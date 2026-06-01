@@ -5,7 +5,7 @@ export const site = {
   fullName: '«FAMILY HOTEL»',
   tagline: 'База відпочинку для всієї родини',
   phone: '+380980615228',
-  phoneDisplay: '098 061 52 28',
+  phoneDisplay: '+38 098 061 52 28',
   instagram: 'https://www.instagram.com/family_hotels',
   bookingNote: 'Бронювання за телефоном або в Direct Instagram',
   address: {

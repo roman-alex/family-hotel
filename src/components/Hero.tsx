@@ -32,10 +32,10 @@ export function Hero() {
           {hero.subtitle}
         </p>
 
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <div className="mx-auto flex w-full max-w-sm flex-col gap-4 sm:max-w-none sm:flex-row sm:justify-center">
           <a
             href={`tel:${site.phone}`}
-            className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-8 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-brand-400 hover:shadow-xl"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-500 px-8 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-brand-400 hover:shadow-xl sm:w-auto"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -55,7 +55,7 @@ export function Hero() {
             href={site.instagram}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border-2 border-brand-300 px-8 py-4 text-base font-semibold text-brand-700 transition hover:border-brand-400 hover:bg-brand-100"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border-2 border-brand-300 px-8 py-4 text-base font-semibold text-brand-700 transition hover:border-brand-400 hover:bg-brand-100 sm:w-auto"
           >
             Написати в Instagram
           </a>
