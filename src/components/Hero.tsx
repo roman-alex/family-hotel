@@ -1,6 +1,7 @@
 import { hero, site } from '../data/content'
 import { asset } from '../utils/asset'
 import { Logo } from './Logo'
+import { RouteLinks } from './RouteLinks'
 
 export function Hero() {
   return (
@@ -61,7 +62,11 @@ export function Hero() {
           </a>
         </div>
 
-        <p className="mt-6 text-sm text-brand-600/60">{site.bookingNote}</p>
+        <div className="mt-5 flex justify-center">
+          <RouteLinks variant="inline" />
+        </div>
+
+        <p className="mt-5 text-sm text-brand-600/60">{site.bookingNote}</p>
       </div>
 
       <a
