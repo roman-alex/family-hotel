@@ -1,4 +1,6 @@
 import { site } from '../data/content'
+import { HotelMap } from './HotelMap'
+import { RouteLinks } from './RouteLinks'
 
 export function ContactSection() {
   return (
@@ -11,7 +13,7 @@ export function ContactSection() {
         </div>
 
         <div className="grid gap-10 lg:grid-cols-2">
-          <div className="flex flex-col gap-8">
+          <div className="flex flex-col gap-6">
             <div className="rounded-2xl bg-white p-8 shadow-md">
               <div className="mb-6 flex items-start gap-4">
                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-300/30 text-brand-500">
@@ -64,6 +66,8 @@ export function ContactSection() {
               </div>
             </div>
 
+            <RouteLinks />
+
             <a
               href={`tel:${site.phone}`}
               className="flex items-center justify-center gap-3 rounded-2xl bg-brand-500 py-5 text-lg font-semibold text-white shadow-lg transition hover:bg-brand-400"
@@ -73,16 +77,7 @@ export function ContactSection() {
             </a>
           </div>
 
-          <div className="overflow-hidden rounded-2xl shadow-md">
-            <iframe
-              title="Карта"
-              src={site.mapEmbed}
-              className="h-full min-h-[400px] w-full border-0"
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              allowFullScreen
-            />
-          </div>
+          <HotelMap />
         </div>
       </div>
     </section>
