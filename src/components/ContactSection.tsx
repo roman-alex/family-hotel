@@ -12,7 +12,7 @@ export function ContactSection() {
           </h2>
         </div>
 
-        <div className="grid items-start gap-10 lg:grid-cols-2">
+        <div className="grid items-start gap-10 lg:grid-cols-2 lg:items-stretch">
           <div className="flex flex-col gap-6">
             <div className="rounded-2xl bg-white p-8 shadow-md">
               <div className="mb-6 flex items-start gap-4">

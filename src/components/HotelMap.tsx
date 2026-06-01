@@ -72,7 +72,7 @@ export function HotelMap() {
   }, [])
 
   return (
-    <div className="hotel-map-shell h-[320px] overflow-hidden rounded-2xl shadow-md ring-1 ring-brand-200/60 sm:h-[360px] lg:h-[380px]">
+    <div className="hotel-map-shell h-[320px] overflow-hidden rounded-2xl shadow-md ring-1 ring-brand-200/60 sm:h-[360px] lg:h-full lg:min-h-[380px]">
       <div ref={containerRef} className="hotel-map h-full w-full" />
     </div>
   )
