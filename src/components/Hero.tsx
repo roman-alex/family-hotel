@@ -35,7 +35,7 @@ export function Hero() {
         <div className="mx-auto flex w-full max-w-sm flex-col gap-4 sm:max-w-none sm:flex-row sm:justify-center">
           <a
             href={`tel:${site.phone}`}
-            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-500 px-8 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-brand-400 hover:shadow-xl sm:w-auto"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-brand-500 px-8 py-4 text-base font-semibold text-brand-700 shadow-lg transition hover:bg-brand-400 hover:shadow-xl sm:w-auto"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

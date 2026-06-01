@@ -56,7 +56,7 @@ export function Pricing() {
         <div className="mt-8 text-center">
           <a
             href={`tel:${site.phone}`}
-            className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-8 py-3 font-semibold text-white transition hover:bg-brand-400"
+            className="inline-flex items-center gap-2 rounded-full bg-brand-500 px-8 py-3 font-semibold text-brand-700 transition hover:bg-brand-400"
           >
             Забронювати: {site.phoneDisplay}
           </a>

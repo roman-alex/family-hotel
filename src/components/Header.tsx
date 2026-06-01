@@ -26,7 +26,7 @@ export function Header() {
 
         <a
           href={`tel:${site.phone}`}
-          className="hidden items-center gap-2 rounded-full bg-brand-500 px-5 py-2 text-sm font-medium text-white transition hover:bg-brand-400 md:flex"
+          className="hidden items-center gap-2 rounded-full bg-brand-500 px-5 py-2 text-sm font-medium text-brand-700 transition hover:bg-brand-400 md:flex"
         >
           <PhoneIcon />
           {site.phoneDisplay}
