@@ -29,20 +29,17 @@ export function RouteLinks() {
             aria-label="Закрити"
             onClick={() => setOpen(false)}
           />
-          <div className="absolute right-0 bottom-full left-0 z-50 mb-2 overflow-hidden rounded-xl border border-brand-200 bg-white shadow-xl">
-            <p className="border-b border-brand-100 px-4 py-3 text-sm font-medium text-brand-700">
-              Оберіть навігацію
-            </p>
+          <div className="absolute right-0 bottom-full left-0 z-50 mb-2 overflow-hidden rounded-xl border border-brand-500/30 bg-brand-700 py-1 shadow-2xl ring-2 ring-brand-300/40">
             {apps.map((app) => (
               <a
                 key={app.id}
                 href={app.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 px-4 py-3 text-brand-700 transition hover:bg-brand-50"
+                className="flex items-center gap-3 px-4 py-3 text-white transition hover:bg-brand-600"
                 onClick={() => setOpen(false)}
               >
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-100 text-xs font-bold text-brand-600">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand-500 text-xs font-bold text-white">
                   {app.label.charAt(0)}
                 </span>
                 {app.label}
