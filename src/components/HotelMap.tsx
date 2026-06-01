@@ -52,12 +52,19 @@ export function HotelMap() {
 
     mapRef.current = map
 
-    const resizeObserver = new ResizeObserver(() => {
-      map.invalidateSize()
-    })
+    const fixSize = () => map.invalidateSize({ animate: false })
+
+    map.whenReady(fixSize)
+    requestAnimationFrame(fixSize)
+    const t1 = window.setTimeout(fixSize, 100)
+    const t2 = window.setTimeout(fixSize, 350)
+
+    const resizeObserver = new ResizeObserver(fixSize)
     resizeObserver.observe(containerRef.current)
 
     return () => {
+      window.clearTimeout(t1)
+      window.clearTimeout(t2)
       resizeObserver.disconnect()
       map.remove()
       mapRef.current = null
@@ -65,8 +72,8 @@ export function HotelMap() {
   }, [])
 
   return (
-    <div className="hotel-map-shell overflow-hidden rounded-2xl shadow-md ring-1 ring-brand-200/60">
-      <div ref={containerRef} className="hotel-map h-[400px] w-full" />
+    <div className="hotel-map-shell h-[400px] min-h-[400px] overflow-hidden rounded-2xl shadow-md ring-1 ring-brand-200/60 lg:h-auto lg:min-h-[480px] lg:self-stretch">
+      <div ref={containerRef} className="hotel-map h-full min-h-[400px] w-full lg:min-h-[480px]" />
     </div>
   )
 }
