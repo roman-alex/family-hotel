@@ -1,3 +1,5 @@
+import { asset } from '../utils/asset'
+
 export const site = {
   name: 'FAMILY HOTEL',
   fullName: '«FAMILY HOTEL»',
@@ -43,9 +45,9 @@ export const services = [
     description:
       'Затишні двомісні та покращені номери з дерев\'яним оздобленням, кондиціонером та сучасним інтер\'єром. Кожен номер має окрему терасу з меблями — ідеально для ранкової кави на свіжому повітрі.',
     cta: 'Забронювати номер',
-    image: '/images/room-interior.png',
+    image: asset('images/room-interior.png'),
     imageAlt: 'Двомісний покращений номер',
-    secondaryImage: '/images/room-exterior.png',
+    secondaryImage: asset('images/room-exterior.png'),
     secondaryImageAlt: 'Тераса номера',
   },
   {
@@ -54,7 +56,7 @@ export const services = [
     description:
       'Стильний ресторан з панорамними вікнами та видом на зелені пагорби. Смачна домашня кухня, затишна атмосфера та комфортна тераса для сніданків, обідів і вечерь.',
     cta: 'Дізнатися більше',
-    image: '/images/restaurant.png',
+    image: asset('images/restaurant.png'),
     imageAlt: 'Ресторан з панорамним видом',
   },
   {
@@ -63,7 +65,7 @@ export const services = [
     description:
       'Великий відкритий басейн з чистою водою, шезлонгами та зонтиками. Ідеальне місце для освіження влітку та відпочинку біля води для всієї родини.',
     cta: 'Забронювати відпочинок',
-    image: '/images/pool.png',
+    image: asset('images/pool.png'),
     imageAlt: 'Басейн на території бази',
   },
 ] as const
@@ -89,19 +91,19 @@ export const pricing = {
 
 export const galleryImages = [
   {
-    src: '/images/room-interior.png',
+    src: asset('images/room-interior.png'),
     alt: 'Двомісний покращений номер',
   },
   {
-    src: '/images/room-exterior.png',
+    src: asset('images/room-exterior.png'),
     alt: 'Тераса номера',
   },
   {
-    src: '/images/restaurant.png',
+    src: asset('images/restaurant.png'),
     alt: 'Ресторан',
   },
   {
-    src: '/images/pool.png',
+    src: asset('images/pool.png'),
     alt: 'Басейн',
   },
-] as const
+]

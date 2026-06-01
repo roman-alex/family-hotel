@@ -1,3 +1,5 @@
+import { asset } from '../utils/asset'
+
 type LogoProps = {
   size?: 'sm' | 'md' | 'lg'
   showText?: boolean
@@ -16,7 +18,7 @@ export function Logo({ size = 'md', showText = false, variant = 'dark' }: LogoPr
   return (
     <div className="flex items-center gap-3">
       <img
-        src="/logo.svg"
+        src={asset('logo.svg')}
         alt="FAMILY HOTEL"
         className={`${sizes[size]} shrink-0`}
       />
