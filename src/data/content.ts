@@ -13,16 +13,16 @@ export const site = {
     region: 'Хмельницька обл., Україна',
     full: 'Хмельницька обл., с. Куражин, Україна',
   },
+  mapsUrl: 'https://maps.app.goo.gl/ZSV2nwAMqc2z62QA8',
   location: {
-    lat: 48.65628,
-    lng: 27.28041,
+    lat: 48.6088221,
+    lng: 27.314088,
     label: 'FAMILY HOTEL',
   },
   navigation: {
-    google:
-      'https://www.google.com/maps/search/?api=1&query=48.65628,27.28041',
-    waze: 'https://waze.com/ul?ll=48.65628,27.28041&navigate=yes',
-    apple: 'https://maps.apple.com/?daddr=48.65628,27.28041',
+    google: 'https://maps.app.goo.gl/ZSV2nwAMqc2z62QA8',
+    waze: 'https://waze.com/ul?ll=48.6088221,27.314088&navigate=yes',
+    apple: 'https://maps.apple.com/?daddr=48.6088221,27.314088',
   },
 } as const
 
