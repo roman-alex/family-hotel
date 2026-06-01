@@ -66,7 +66,7 @@ export function Hero() {
 
       <a
         href="#about"
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-brand-400 transition hover:text-brand-500"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-brand-400 transition hover:text-brand-600"
         aria-label="Далі"
       >
         <svg

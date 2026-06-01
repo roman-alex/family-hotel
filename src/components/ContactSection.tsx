@@ -16,7 +16,7 @@ export function ContactSection() {
           <div className="flex flex-col gap-6">
             <div className="rounded-2xl bg-white p-8 shadow-md">
               <div className="mb-6 flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-300/30 text-brand-500">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-500/25 text-brand-600">
                   <LocationIcon />
                 </div>
                 <div>
@@ -27,7 +27,7 @@ export function ContactSection() {
               </div>
 
               <div className="mb-6 flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-300/30 text-brand-500">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-500/25 text-brand-600">
                   <PhoneIcon />
                 </div>
                 <div>
@@ -36,7 +36,7 @@ export function ContactSection() {
                   </h3>
                   <a
                     href={`tel:${site.phone}`}
-                    className="text-lg font-medium text-brand-500 transition hover:text-brand-400"
+                    className="text-lg font-medium text-brand-600 transition hover:text-brand-700"
                   >
                     {site.phoneDisplay}
                   </a>
@@ -47,7 +47,7 @@ export function ContactSection() {
               </div>
 
               <div className="flex items-start gap-4">
-                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-300/30 text-brand-500">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-brand-500/25 text-brand-600">
                   <InstagramIcon />
                 </div>
                 <div>
@@ -58,7 +58,7 @@ export function ContactSection() {
                     href={site.instagram}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-brand-500 transition hover:text-brand-400"
+                    className="text-brand-600 transition hover:text-brand-700"
                   >
                     @family_hotels
                   </a>

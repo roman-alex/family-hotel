@@ -17,7 +17,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-brand-600/80 transition hover:text-brand-500"
+              className="text-sm text-brand-600/80 transition hover:text-brand-700"
             >
               {link.label}
             </a>
@@ -48,7 +48,7 @@ export function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="block py-3 text-brand-700 transition hover:text-brand-500"
+              className="block py-3 text-brand-700 transition hover:text-brand-600"
               onClick={() => setMenuOpen(false)}
             >
               {link.label}
@@ -56,7 +56,7 @@ export function Header() {
           ))}
           <a
             href={`tel:${site.phone}`}
-            className="mt-2 flex items-center gap-2 py-3 font-medium text-brand-500"
+            className="mt-2 flex items-center gap-2 py-3 font-medium text-brand-600"
           >
             <PhoneIcon />
             {site.phoneDisplay}

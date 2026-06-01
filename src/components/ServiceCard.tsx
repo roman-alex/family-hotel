@@ -66,7 +66,7 @@ export function ServiceCard({
         <p className="mb-6 leading-relaxed text-brand-600/70">{description}</p>
         <a
           href={`tel:${site.phone}`}
-          className="inline-flex items-center gap-2 font-semibold text-brand-500 transition hover:text-brand-400"
+          className="inline-flex items-center gap-2 font-semibold text-brand-600 transition hover:text-brand-700"
         >
           {cta}
           <svg
