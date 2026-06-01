@@ -67,14 +67,6 @@ export function ContactSection() {
             </div>
 
             <RouteLinks />
-
-            <a
-              href={`tel:${site.phone}`}
-              className="flex items-center justify-center gap-3 rounded-2xl bg-brand-500 py-5 text-lg font-semibold text-white shadow-lg transition hover:bg-brand-400"
-            >
-              <PhoneIcon />
-              Зателефонувати для бронювання
-            </a>
           </div>
 
           <HotelMap />
