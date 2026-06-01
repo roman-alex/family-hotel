@@ -16,8 +16,11 @@ npm run build
 npm run preview
 ```
 
-## Деплой
+## Деплой (GitHub Pages)
 
-GitHub Pages: `https://roman-alex.github.io/family-hotel/`
+1. Репозиторій → **Settings** → **Pages** → **Build and deployment** → **GitHub Actions**
+2. Після push у `main` workflow збирає сайт автоматично
+
+Сайт: https://roman-alex.github.io/family-hotel/
 
 Контент редагується в `src/data/content.ts`.
