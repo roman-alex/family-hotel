@@ -2,6 +2,8 @@ import { asset } from '../utils/asset'
 
 export const site = {
   name: 'FAMILY HOTEL',
+  url: 'https://family-hotel.com.ua',
+  restaurantMenuPath: '/restaurant',
   fullName: '«FAMILY HOTEL»',
   tagline: 'База відпочинку для всієї родини',
   phone: '+380980615228',

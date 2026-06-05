@@ -1,26 +1,13 @@
-import { ContactSection } from './components/ContactSection'
-import { Footer } from './components/Footer'
-import { Gallery } from './components/Gallery'
-import { Header } from './components/Header'
-import { Hero } from './components/Hero'
-import { Intro } from './components/Intro'
-import { Pricing } from './components/Pricing'
-import { Services } from './components/Services'
+import { Route, Routes } from 'react-router-dom'
+import { HomePage } from './pages/HomePage'
+import { RestaurantPage } from './pages/RestaurantPage'
 
 function App() {
   return (
-    <>
-      <Header />
-      <main>
-        <Hero />
-        <Intro />
-        <Services />
-        <Pricing />
-        <Gallery />
-        <ContactSection />
-      </main>
-      <Footer />
-    </>
+    <Routes>
+      <Route path="/" element={<HomePage />} />
+      <Route path="/restaurant" element={<RestaurantPage />} />
+    </Routes>
   )
 }
 
