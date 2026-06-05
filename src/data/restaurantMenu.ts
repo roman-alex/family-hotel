@@ -2,6 +2,7 @@ export type MenuItem = {
   name: string
   description?: string
   price: number
+  image?: string
 }
 
 export type MenuSection = {
@@ -14,7 +15,7 @@ export const menuHits: MenuItem[] = [
   { name: 'Борщ', price: 220 },
   { name: 'Банош', price: 230 },
   { name: 'Стейк зі свинини', price: 450 },
-  { name: 'Паста з креветками', price: 300 },
+  { name: 'Паста з креветками', price: 300, image: 'images/dishes/pasta-z-krevetkamy.png' },
   { name: 'Цезарь', price: 280 },
 ]
 
@@ -67,7 +68,11 @@ export const menuSections: MenuSection[] = [
       },
       { name: 'Солянка', price: 200 },
       { name: 'Бограч', price: 240 },
-      { name: 'Курячий бульйон', price: 160 },
+      {
+        name: 'Курячий бульйон',
+        price: 160,
+        image: 'images/dishes/kurjachyj-buljon.png',
+      },
       { name: 'Суп з фрикадельками', price: 160 },
     ],
   },
@@ -163,7 +168,7 @@ export const menuSections: MenuSection[] = [
         price: 300,
       },
       { name: 'Паста карбонара', price: 260 },
-      { name: 'Паста з креветками', price: 300 },
+      { name: 'Паста з креветками', price: 300, image: 'images/dishes/pasta-z-krevetkamy.png' },
       { name: 'Вареники з картоплею', price: 160 },
       { name: 'Вареники з сиром та кропом', price: 160 },
       { name: 'Вареники з вишнею', price: 160 },

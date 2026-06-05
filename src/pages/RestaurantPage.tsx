@@ -43,12 +43,9 @@ export function RestaurantPage() {
             {menuHits.map((item) => (
               <div
                 key={item.name}
-                className="flex items-center justify-between rounded-xl border border-brand-200/60 bg-brand-50/80 px-4 py-3.5 transition hover:border-brand-300 hover:bg-white"
+                className="overflow-hidden rounded-xl border border-brand-200/60 bg-brand-50/80 px-3 transition hover:border-brand-300 hover:bg-white"
               >
-                <span className="font-medium text-brand-700">{item.name}</span>
-                <span className="shrink-0 rounded-full bg-brand-500/30 px-2.5 py-0.5 text-sm font-semibold tabular-nums text-brand-700">
-                  {item.price}&nbsp;грн
-                </span>
+                <MenuItemRow {...item} />
               </div>
             ))}
           </div>
