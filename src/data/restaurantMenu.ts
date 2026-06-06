@@ -185,9 +185,9 @@ export const menuSections: MenuSection[] = [
     id: 'drinks',
     title: 'Напої',
     items: [
-      { name: 'Узвар', price: 150 },
-      { name: 'Лимонад', price: 180 },
-      { name: 'Сік на вибір', price: 180 },
+      { name: 'Узвар', description: '1 л', price: 150 },
+      { name: 'Лимонад', description: '1 л', price: 180 },
+      { name: 'Сік на вибір', description: '1 л', price: 180 },
     ],
   },
 ]
