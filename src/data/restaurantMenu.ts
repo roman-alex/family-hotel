@@ -33,6 +33,7 @@ export const menuSections: MenuSection[] = [
         name: 'Англійський сніданок',
         description: 'яйця, ковбаски, бекон, квасоля, 2 грінки, помідор',
         price: 240,
+        image: 'images/dishes/anglijskyj-snidanok.png',
       },
       {
         name: 'Сирники',
