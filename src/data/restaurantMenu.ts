@@ -36,7 +36,8 @@ export const menuSections: MenuSection[] = [
         image: 'images/dishes/anglijskyj-snidanok.png',
       },
       {
-        name: 'Вівсяна каша зі свіжими фруктами',
+        name: 'Вівсяна каша',
+        description: 'зі свіжими фруктами',
         price: 160,
         image: 'images/dishes/vivsjana-kasha-zi-svizhymy-fruktamy.png',
       },
@@ -44,6 +45,7 @@ export const menuSections: MenuSection[] = [
         name: 'Сирники',
         description: 'згущене молоко, сметана на вибір',
         price: 180,
+        image: 'images/dishes/syrnyky.png',
       },
       {
         name: 'Налисники',
@@ -54,12 +56,14 @@ export const menuSections: MenuSection[] = [
         name: 'Млинці',
         description: 'картопля, гриби, сметана, курка, моцарела, сметана',
         price: 220,
+        image: 'images/dishes/mlyntsi.png',
       },
       { name: 'Брускети з тунцем', price: 250 },
       {
         name: 'Боул з гречкою',
         description: 'гречка, помідор, зелень, яйце пашот, заправка',
         price: 220,
+        image: 'images/dishes/boul-z-grechkoju.png',
       },
     ],
   },
