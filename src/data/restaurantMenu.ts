@@ -36,6 +36,11 @@ export const menuSections: MenuSection[] = [
         image: 'images/dishes/anglijskyj-snidanok.png',
       },
       {
+        name: 'Вівсяна каша зі свіжими фруктами',
+        price: 160,
+        image: 'images/dishes/vivsjana-kasha-zi-svizhymy-fruktamy.png',
+      },
+      {
         name: 'Сирники',
         description: 'згущене молоко, сметана на вибір',
         price: 180,
