@@ -104,6 +104,7 @@ export const menuSections: MenuSection[] = [
         name: 'Грецький',
         description: 'помідор, огірок, перець, цибуля, фета, оливки',
         price: 220,
+        image: 'images/dishes/greckyj.png',
       },
       {
         name: 'Цезарь',
