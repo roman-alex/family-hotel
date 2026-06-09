@@ -178,7 +178,7 @@ export const menuSections: MenuSection[] = [
         description: 'картопля, свинина, цибуля, сир',
         price: 300,
       },
-      { name: 'Паста карбонара', price: 260 },
+      { name: 'Паста карбонара', price: 260, image: 'images/dishes/pasta-karbonara.png' },
       { name: 'Паста з креветками', price: 300, image: 'images/dishes/pasta-z-krevetkamy.png' },
       { name: 'Вареники з картоплею', price: 160 },
       { name: 'Вареники з сиром та кропом', price: 160 },
