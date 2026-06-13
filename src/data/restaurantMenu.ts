@@ -13,7 +13,7 @@ export type MenuSection = {
 
 export const menuHits: MenuItem[] = [
   { name: 'Борщ', price: 220 },
-  { name: 'Банош', price: 230 },
+  { name: 'Банош', price: 230, image: 'images/dishes/banosh.png' },
   { name: 'Стейк зі свинини', price: 450 },
   { name: 'Паста з креветками', price: 300, image: 'images/dishes/pasta-z-krevetkamy.png' },
   { name: 'Цезарь', price: 280 },
@@ -99,6 +99,7 @@ export const menuSections: MenuSection[] = [
         name: 'Салат літній',
         description: 'огірок, помідор, цибуля',
         price: 150,
+        image: 'images/dishes/salat-litnij.png',
       },
       {
         name: 'Грецький',
@@ -144,6 +145,7 @@ export const menuSections: MenuSection[] = [
         description:
           'сало зі спеціями, часник, цибуля, грінки, сальцеві кульки',
         price: 350,
+        image: 'images/dishes/ukrainska-zakuska.png',
       },
       {
         name: 'Пивна дошка',
@@ -188,6 +190,7 @@ export const menuSections: MenuSection[] = [
         name: 'Банош',
         description: 'шкварки, сир кисломолочний домашній, сметана',
         price: 230,
+        image: 'images/dishes/banosh.png',
       },
     ],
   },
