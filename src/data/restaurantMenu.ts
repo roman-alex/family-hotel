@@ -12,11 +12,11 @@ export type MenuSection = {
 }
 
 export const menuHits: MenuItem[] = [
-  { name: 'Борщ', price: 220 },
+  { name: 'Борщ', price: 220, image: 'images/dishes/borshch.png' },
   { name: 'Банош', price: 230, image: 'images/dishes/banosh.png' },
   { name: 'Стейк зі свинини', price: 450 },
   { name: 'Паста з креветками', price: 300, image: 'images/dishes/pasta-z-krevetkamy.png' },
-  { name: 'Цезарь', price: 280 },
+  { name: 'Цезарь', price: 280, image: 'images/dishes/cezar.png' },
 ]
 
 export const menuSections: MenuSection[] = [
@@ -75,6 +75,7 @@ export const menuSections: MenuSection[] = [
         name: 'Борщ',
         description: 'сало, сметана, цибуля, грінки',
         price: 220,
+        image: 'images/dishes/borshch.png',
       },
       { name: 'Солянка', price: 200 },
       { name: 'Бограч', price: 240 },
@@ -111,12 +112,14 @@ export const menuSections: MenuSection[] = [
         name: 'Цезарь',
         description: 'куряче філе, салат, помідори, грінки, пармезан',
         price: 280,
+        image: 'images/dishes/cezar.png',
       },
       {
         name: 'Капрізе',
         description:
           'помідори, моцарела, базилік, оливкова олія, бальзамічний соус',
         price: 220,
+        image: 'images/dishes/kaprize.png',
       },
     ],
   },
@@ -179,12 +182,13 @@ export const menuSections: MenuSection[] = [
         name: 'Гаряча пательня',
         description: 'картопля, свинина, цибуля, сир',
         price: 300,
+        image: 'images/dishes/garjacha-patelnja.png',
       },
       { name: 'Паста карбонара', price: 260, image: 'images/dishes/pasta-karbonara.png' },
       { name: 'Паста з креветками', price: 300, image: 'images/dishes/pasta-z-krevetkamy.png' },
       { name: 'Вареники з картоплею', price: 160 },
       { name: 'Вареники з сиром та кропом', price: 160 },
-      { name: 'Вареники з вишнею', price: 160 },
+      { name: 'Вареники з вишнею', price: 160, image: 'images/dishes/varenyky-z-vyshneju.png' },
       { name: 'Пельмені', price: 200 },
       {
         name: 'Банош',
