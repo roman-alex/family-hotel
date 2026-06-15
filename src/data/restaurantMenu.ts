@@ -54,7 +54,7 @@ export const menuSections: MenuSection[] = [
       },
       {
         name: 'Млинці',
-        description: 'картопля, гриби, сметана, курка, моцарела, сметана',
+        description: 'картопля з грибами / курка з моцарелою; зі сметаною',
         price: 220,
         image: 'images/dishes/mlyntsi.png',
       },
