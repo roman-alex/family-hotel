@@ -95,6 +95,7 @@ export const menuSections: MenuSection[] = [
         name: 'Салат з капусти',
         description: 'капуста, огірок, лимон, олія, оцет',
         price: 120,
+        image: 'images/dishes/salat-z-kapusty.png',
       },
       {
         name: 'Салат літній',
@@ -141,8 +142,13 @@ export const menuSections: MenuSection[] = [
         name: 'Помідори',
         description: 'з часником і зеленню',
         price: 180,
+        image: 'images/dishes/pomidory.png',
       },
-      { name: 'Малосольні огірки', price: 150 },
+      {
+        name: 'Малосольні огірки',
+        price: 150,
+        image: 'images/dishes/malosolni-ogirky.png',
+      },
       {
         name: 'Українська закуска',
         description:
