@@ -26,8 +26,9 @@ export const menuSections: MenuSection[] = [
     items: [
       {
         name: 'Омлет',
-        description: 'сосиска, 2 грінки, огірок, помідор',
+        description: '2 сосиски, 2 грінки, огірок, помідор',
         price: 200,
+        image: 'images/dishes/omlet.png',
       },
       {
         name: 'Англійський сніданок',
@@ -51,6 +52,7 @@ export const menuSections: MenuSection[] = [
         name: 'Налисники',
         description: 'з сиром, згущене молоко, сметана на вибір',
         price: 180,
+        image: 'images/dishes/nalysnyky.png',
       },
       {
         name: 'Млинці',
