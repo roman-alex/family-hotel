@@ -207,4 +207,20 @@ export const menuSections: MenuSection[] = [
       { name: 'Сік на вибір', description: '1 л', price: 180 },
     ],
   },
+  {
+    id: 'fast-food',
+    title: 'Fast Food',
+    items: [
+      { name: 'Чізбургер', price: 220 },
+      { name: 'Дабл біг чізбургер', price: 270 },
+      { name: 'Картопля фрі', description: '150 г + соус', price: 150 },
+      { name: 'Хот дог XL', price: 130 },
+      { name: 'Нагетси', description: 'соус', price: 210 },
+      { name: 'Соус кисло-солодкий', price: 20 },
+      { name: 'Соус сирний', price: 20 },
+      { name: 'Соус барбекю', price: 20 },
+      { name: 'Соус кетчуп', price: 20 },
+      { name: 'Соус часниковий', price: 20 },
+    ],
+  },
 ]
