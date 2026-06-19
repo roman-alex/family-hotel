@@ -60,7 +60,11 @@ export const menuSections: MenuSection[] = [
         price: 220,
         image: 'images/dishes/mlyntsi.png',
       },
-      { name: 'Брускети з тунцем', price: 250 },
+      {
+        name: 'Брускети з тунцем',
+        price: 250,
+        image: 'images/dishes/bruskety-z-tuncem.png',
+      },
       {
         name: 'Боул з гречкою',
         description: 'гречка, помідор, зелень, яйце пашот, заправка',
@@ -162,6 +166,7 @@ export const menuSections: MenuSection[] = [
         name: 'Пивна дошка',
         description: 'сухарики, реберця, сирні кульки, арахіс',
         price: 450,
+        image: 'images/dishes/pyvna-doshka.png',
       },
       {
         name: 'Стейк зі свинини',
@@ -213,6 +218,81 @@ export const menuSections: MenuSection[] = [
       { name: 'Узвар', description: '1 л', price: 150 },
       { name: 'Лимонад', description: '1 л', price: 180 },
       { name: 'Сік на вибір', description: '1 л', price: 180 },
+    ],
+  },
+  {
+    id: 'coffee-and-tea',
+    title: 'Coffee and Tea',
+    items: [
+      { name: 'Еспресо', price: 40 },
+      { name: 'Американо', price: 40 },
+      { name: 'Капучино', price: 80 },
+      { name: 'Лате', price: 90 },
+      { name: 'Флет вайт', price: 100 },
+      { name: 'Подвійне еспресо', price: 60 },
+      { name: 'Айс лате', price: 120 },
+      { name: 'Оранж', price: 150 },
+      { name: 'Фрапе', price: 200 },
+      { name: 'Еспресо тонік', price: 130 },
+      { name: 'Чай', price: 50 },
+      { name: 'Какао', price: 60 },
+      { name: 'Великий чай', price: 150 },
+    ],
+  },
+  {
+    id: 'coctails',
+    title: 'Coctails',
+    items: [
+      {
+        name: 'Classic Mojito',
+        description: 'спрайт, сироп, мята, ром',
+        price: 200,
+      },
+      {
+        name: 'Aperol',
+        description: 'сухе шампанське, лікер апероль, содова, апельсин',
+        price: 300,
+      },
+      {
+        name: 'Blue Lagoon',
+        description: 'горілка, спрайт, лікер, мята',
+        price: 200,
+      },
+      {
+        name: 'Margarita',
+        description: 'текіла, лікер, сироп, сік лайма, лайм, сіль',
+        price: 250,
+      },
+      {
+        name: 'Tequila Sunrise',
+        description: 'текіла, лікер апельсиновий, сік, апельсин',
+        price: 250,
+      },
+      {
+        name: 'Gin Tonic',
+        description: 'джин, тонік, лайм',
+        price: 200,
+      },
+      {
+        name: 'Long Island Iced Tea',
+        description: 'горілка, ром, текіла, лікер, сироп, сік лимонний, кола, лимон',
+        price: 350,
+      },
+      {
+        name: 'Porn Star',
+        description: 'горілка, лікер, просеко, апельсин',
+        price: 250,
+      },
+      {
+        name: 'Pina Colada',
+        description: '2 види рому, сироп, ананасовий сік, лайм',
+        price: 250,
+      },
+      {
+        name: 'Jungle Juice',
+        description: 'джин, ананасовий сік, сироп, лікер',
+        price: 200,
+      },
     ],
   },
   {
