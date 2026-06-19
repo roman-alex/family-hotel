@@ -166,13 +166,13 @@ export const menuSections: MenuSection[] = [
       {
         name: 'Стейк зі свинини',
         description: '100 г + соус',
-        price: 450,
+        price: 250,
       },
       {
         name: "М'ясна дошка",
         description:
           'ребра, ковбаски гриль, шашлик курки, картопля по-селянськи, 2 соуси',
-        price: 450,
+        price: 650,
       },
     ],
   },
