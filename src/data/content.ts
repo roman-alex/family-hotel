@@ -76,7 +76,7 @@ export const services = [
     description:
       'Великий відкритий басейн з чистою водою, шезлонгами та зонтиками. Ідеальне місце для освіження влітку та відпочинку біля води для всієї родини.',
     cta: 'Забронювати відпочинок',
-    image: asset('images/pool.png'),
+    image: asset('images/pool.webp'),
     imageAlt: 'Басейн на території бази',
   },
 ] as const
@@ -114,7 +114,7 @@ export const galleryImages = [
     alt: 'Ресторан',
   },
   {
-    src: asset('images/pool.png'),
+    src: asset('images/pool.webp'),
     alt: 'Басейн',
   },
 ]
