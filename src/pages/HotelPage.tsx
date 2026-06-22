@@ -1,9 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { FiFilter, FiX } from 'react-icons/fi'
-import {
-  getEasyMsAvailabilityByNights,
-  hasEasyMsConfig,
-} from '../api/easyms'
+import { getEasyMsAvailabilityByNights } from '../api/easyms'
 import { FixedPageBackground } from '../components/FixedPageBackground'
 import { Logo } from '../components/Logo'
 import {
@@ -19,17 +16,11 @@ import {
 } from '../data/hotel'
 import { getAvailableCategoryItemsForRange } from '../utils/hotelAdapters'
 
-const emptyFilters: AvailabilityFiltersValue = {
-  startDate: '',
-  endDate: '',
-  categoryIds: [],
-}
-
 export function HotelPage() {
   const requestIdRef = useRef(0)
   const [filtersOpen, setFiltersOpen] = useState(false)
   const [defaultFilters] = useState<AvailabilityFiltersValue>(() =>
-    hasEasyMsConfig() ? getDefaultAvailabilityFilters() : emptyFilters,
+    getDefaultAvailabilityFilters(),
   )
   const [draftFilters, setDraftFilters] =
     useState<AvailabilityFiltersValue>(defaultFilters)
@@ -37,10 +28,8 @@ export function HotelPage() {
     useState<AvailabilityFiltersValue>(defaultFilters)
   const [availabilityItems, setAvailabilityItems] = useState<
     HotelAvailabilityItem[]
-  >(() => (hasEasyMsConfig() ? [] : getMockAvailabilityItems()))
-  const [isLoadingAvailability, setIsLoadingAvailability] = useState(() =>
-    hasEasyMsConfig(),
-  )
+  >([])
+  const [isLoadingAvailability, setIsLoadingAvailability] = useState(true)
   const [availabilityError, setAvailabilityError] = useState('')
 
   const categoryOptions = useMemo(() => hotelCategoryOptions, [])
@@ -94,13 +83,9 @@ export function HotelPage() {
     setAppliedFilters(draftFilters)
     setFiltersOpen(false)
 
-    if (
-      !hasEasyMsConfig() ||
-      !draftFilters.startDate ||
-      !draftFilters.endDate
-    ) {
-      setAvailabilityError('')
-      setAvailabilityItems(getMockAvailabilityItems(draftFilters))
+    if (!draftFilters.startDate || !draftFilters.endDate) {
+      setAvailabilityItems([])
+      setAvailabilityError('Оберіть дати заїзду та виїзду.')
       return
     }
 
@@ -116,14 +101,10 @@ export function HotelPage() {
     setFiltersOpen(false)
     setAvailabilityError('')
 
-    if (hasEasyMsConfig()) {
-      await loadAndApplyEasyMsAvailability(
-        defaultFilters,
-        'Не вдалося завантажити доступність з EasyMS. Перевірте підключення або ключ модуля.',
-      )
-    } else {
-      setAvailabilityItems(getMockAvailabilityItems(defaultFilters))
-    }
+    await loadAndApplyEasyMsAvailability(
+      defaultFilters,
+      'Не вдалося завантажити доступність з EasyMS. Перевірте підключення або ключ модуля.',
+    )
   }
 
   async function loadAndApplyEasyMsAvailability(
@@ -144,6 +125,7 @@ export function HotelPage() {
       }
     } catch {
       if (requestIdRef.current === requestId) {
+        setAvailabilityItems([])
         setAvailabilityError(errorMessage)
       }
     } finally {
@@ -154,10 +136,6 @@ export function HotelPage() {
   }
 
   useEffect(() => {
-    if (!hasEasyMsConfig()) {
-      return
-    }
-
     void loadAndApplyEasyMsAvailability(
       defaultFilters,
       'Не вдалося завантажити доступність з EasyMS. Перевірте підключення або ключ модуля.',
@@ -275,13 +253,13 @@ export function HotelPage() {
             </div>
           )}
 
-          {!isLoadingAvailability && filteredItems.length === 0 && (
-            <div className="rounded-2xl bg-white/85 px-5 py-8 text-center text-brand-600/70 shadow-lg ring-1 ring-white/70 backdrop-blur-md">
-              {hasEasyMsConfig()
-                ? 'У вибраному періоді поки немає вільних варіантів від 2 діб.'
-                : 'За вибраними фільтрами поки немає вільних слотів.'}
-            </div>
-          )}
+          {!isLoadingAvailability &&
+            !availabilityError &&
+            filteredItems.length === 0 && (
+              <div className="rounded-2xl bg-white/85 px-5 py-8 text-center text-brand-600/70 shadow-lg ring-1 ring-white/70 backdrop-blur-md">
+                У вибраному періоді поки немає вільних варіантів.
+              </div>
+            )}
         </section>
       </main>
 
@@ -323,35 +301,4 @@ function toIsoDate(date: Date) {
   const day = String(date.getDate()).padStart(2, '0')
 
   return `${year}-${month}-${day}`
-}
-
-function getMockAvailabilityItems(
-  filters: AvailabilityFiltersValue = emptyFilters,
-) {
-  const startIso = filters.startDate || toIsoDate(new Date())
-  const endIso = filters.endDate || addDaysIso(startIso, 2)
-
-  return getAvailableCategoryItemsForRange(roomCategories, [
-    {
-      startIso,
-      endIso,
-      items: roomCategories.map((category) => ({
-        categoryId: category.categoryId,
-        categoryName: category.title,
-        availability: 1,
-      })),
-    },
-  ])
-}
-
-function addDaysIso(value: string, days: number) {
-  const date = parseIsoDate(value)
-  date.setDate(date.getDate() + days)
-
-  return toIsoDate(date)
-}
-
-function parseIsoDate(value: string) {
-  const [year, month, day] = value.split('-').map(Number)
-  return new Date(year, month - 1, day)
 }

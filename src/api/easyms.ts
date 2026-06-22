@@ -9,10 +9,6 @@ const baseUrl = reservationModuleKey
   ? `https://my.easyms.co/api/reservation/pub/${reservationModuleKey}`
   : ''
 
-export function hasEasyMsConfig() {
-  return Boolean(reservationModuleKey)
-}
-
 export async function getEasyMsDailyAvailability(
   startIso: string,
   endIso: string,
