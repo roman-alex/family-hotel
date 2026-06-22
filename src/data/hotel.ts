@@ -66,7 +66,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 1400 },
     ],
     capacity: { min: 1, max: 2 },
-    amenities: ['2 гості', 'Кондиціонер', 'Wi-Fi'],
+    amenities: ['2 гості', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн', 'Холодильник'],
   },
   {
     id: 'double-improved',
@@ -83,7 +83,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 1600 },
     ],
     capacity: { min: 1, max: 2 },
-    amenities: ['2 гості', 'Покращені', 'Wi-Fi'],
+    amenities: ['2 гості', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн'],
   },
   {
     id: 'triple-balcony',
@@ -100,7 +100,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 1900 },
     ],
     capacity: { min: 2, max: 3 },
-    amenities: ['3 гості', 'Балкон', 'Сімейний'],
+    amenities: ['3 гості', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн', 'Балкон'],
   },
   {
     id: 'triple',
@@ -117,7 +117,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 2000 },
     ],
     capacity: { min: 2, max: 3 },
-    amenities: ['3 гості', 'Без балкону', 'Санвузол'],
+    amenities: ['3 гості', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн'],
   },
   {
     id: 'apartment-8',
@@ -134,7 +134,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 3800 },
     ],
     capacity: { min: 6, max: 8 },
-    amenities: ['До 8 гостей', 'Просторо', 'Для компанії'],
+    amenities: ['До 8 гостей', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн', 'Кухня', 'Холодильник'],
   },
   {
     id: 'apartment-6',
@@ -151,7 +151,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 3200 },
     ],
     capacity: { min: 4, max: 6 },
-    amenities: ['До 6 гостей', 'Кілька зон', 'Для родини'],
+    amenities: ['До 6 гостей', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн', 'Холодильник'],
   },
 ]
 

@@ -1,4 +1,21 @@
-import { FiPhone } from 'react-icons/fi'
+import {
+  FiCheck,
+  FiHome,
+  FiMaximize2,
+  FiPhone,
+  FiSmile,
+  FiTv,
+  FiUsers,
+  FiWifi,
+} from 'react-icons/fi'
+import {
+  LuCircleParking,
+  LuCookingPot,
+  LuRefrigerator,
+  LuShowerHead,
+  LuSnowflake,
+} from 'react-icons/lu'
+import { TbPool } from 'react-icons/tb'
 import { site } from '../../data/content'
 import type { HotelAvailabilityItem } from '../../data/hotel'
 
@@ -28,10 +45,10 @@ export function AvailabilitySlotCard({ slot }: AvailabilitySlotCardProps) {
         <div className="flex flex-col gap-3 p-5 md:p-5">
           <div>
             <div className="mb-2 flex flex-wrap items-center gap-2">
-              <p className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700 ring-1 ring-brand-200/70">
+              <p className="rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-700 ring-1 ring-brand-300/70">
                 {slot.dateLabel}
               </p>
-              <p className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-brand-600 ring-1 ring-brand-200/70">
+              <p className="rounded-full bg-brand-100 px-3 py-1 text-xs font-semibold text-brand-700 ring-1 ring-brand-300/70">
                 {slot.weekdayLabel}
               </p>
             </div>
@@ -45,12 +62,7 @@ export function AvailabilitySlotCard({ slot }: AvailabilitySlotCardProps) {
 
           <div className="flex flex-wrap gap-2">
             {slot.badges.map((badge) => (
-              <span
-                key={badge}
-                className="rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-600 ring-1 ring-brand-200/70"
-              >
-                {badge}
-              </span>
+              <AmenityItem key={badge} badge={badge} />
             ))}
           </div>
 
@@ -70,4 +82,100 @@ export function AvailabilitySlotCard({ slot }: AvailabilitySlotCardProps) {
       </div>
     </article>
   )
+}
+
+function isGuestsBadge(badge: string) {
+  return badge.toLowerCase().includes('гост')
+}
+
+function getGuestsValue(badge: string) {
+  return badge.replace(/\s*гост(ей|і|я)?\s*/i, '').trim()
+}
+
+function AmenityItem({ badge }: { badge: string }) {
+  return (
+    <span
+      className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-600 ring-1 ring-brand-200/70"
+      title={badge}
+    >
+      <BadgeIcon badge={badge} />
+      <span>{getBadgeLabel(badge)}</span>
+    </span>
+  )
+}
+
+function getBadgeLabel(badge: string) {
+  if (isGuestsBadge(badge)) {
+    return `до ${getGuestsValue(badge)} гостей`
+  }
+
+  return badge
+}
+
+function BadgeIcon({ badge }: { badge: string }) {
+  const normalizedBadge = badge.toLowerCase()
+
+  if (normalizedBadge.includes('ноч')) {
+    return <FiCheck className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (normalizedBadge.includes('гост')) {
+    return <FiUsers className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (normalizedBadge.includes('кондиціонер')) {
+    return <LuSnowflake className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (normalizedBadge.includes('wi-fi')) {
+    return <FiWifi className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (normalizedBadge.includes('tv')) {
+    return <FiTv className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (normalizedBadge.includes('парков')) {
+    return <LuCircleParking className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (normalizedBadge.includes('басейн')) {
+    return <TbPool className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (normalizedBadge.includes('кух')) {
+    return <LuCookingPot className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (normalizedBadge.includes('холод')) {
+    return <LuRefrigerator className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (normalizedBadge.includes('душ')) {
+    return <LuShowerHead className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (
+    normalizedBadge.includes('балкон') ||
+    normalizedBadge.includes('санвузол')
+  ) {
+    return <FiHome className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (
+    normalizedBadge.includes('просторо') ||
+    normalizedBadge.includes('кілька зон')
+  ) {
+    return <FiMaximize2 className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  if (
+    normalizedBadge.includes('сімейний') ||
+    normalizedBadge.includes('родини') ||
+    normalizedBadge.includes('компанії')
+  ) {
+    return <FiSmile className="h-4 w-4 shrink-0" aria-hidden />
+  }
+
+  return <FiCheck className="h-4 w-4 shrink-0" aria-hidden />
 }

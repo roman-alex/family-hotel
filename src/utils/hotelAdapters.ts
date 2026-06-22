@@ -65,7 +65,7 @@ export function getAvailableCategoryItemsForRange(
             prices: localCategory?.prices || [],
             image: localCategory?.image,
             capacityLabel: localCategory
-              ? `${localCategory.capacity.min}-${localCategory.capacity.max} гостей`
+              ? `${localCategory.capacity.max} гостей`
               : undefined,
             amenities: localCategory?.amenities || [],
             range,
@@ -193,7 +193,7 @@ function toAvailabilityItem({
     badges: [
       `${nights} ${pluralizeNights(nights)}`,
       ...(capacityLabel ? [capacityLabel] : []),
-      ...getUniqueAmenities(amenities, capacityLabel).slice(0, 2),
+      ...getUniqueAmenities(amenities, capacityLabel),
     ],
   }
 }
