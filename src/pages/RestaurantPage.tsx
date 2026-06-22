@@ -7,7 +7,7 @@ import { MenuItemRow } from '../components/MenuItemRow'
 
 export function RestaurantPage() {
   useEffect(() => {
-    document.title = `Меню ресторану — ${site.name}`
+    document.title = `Ресторан — ${site.name}`
     return () => {
       document.title = `${site.name} — База відпочинку, с. Куражин`
     }
@@ -23,20 +23,27 @@ export function RestaurantPage() {
         </div>
       </header>
 
-      <main className="relative mx-auto max-w-4xl px-4 py-8 pb-12 md:py-12">
-        <div className="mb-10 text-center">
-          <p className="mb-1 text-sm font-medium uppercase tracking-[0.2em] text-brand-500">
-            Restaurant
-          </p>
-          <h1 className="font-serif text-4xl font-bold text-brand-700 md:text-5xl">
-            Меню
-          </h1>
-        </div>
+      <main className="relative mx-auto max-w-4xl px-4 py-4 pb-12 lg:py-8">
+        <h1 className="sr-only">Ресторан FAMILY HOTEL</h1>
+
+        <nav className="mb-4" aria-label="Розділи ресторану">
+          <div className="-mx-4 flex gap-2 overflow-x-auto px-4 pb-1 lg:mx-0 lg:flex-wrap lg:justify-center lg:overflow-visible lg:px-0 lg:pb-0">
+            {menuSections.map((section) => (
+              <a
+                key={section.id}
+                href={`#${section.id}`}
+                className="shrink-0 rounded-xl border border-brand-200 bg-white/50 px-4 py-2.5 text-sm font-semibold text-brand-700 shadow-sm backdrop-blur-sm transition hover:border-brand-300 hover:bg-white lg:px-4 lg:py-2"
+              >
+                {section.title}
+              </a>
+            ))}
+          </div>
+        </nav>
 
         <section className="rounded-2xl bg-white/85 p-6 shadow-lg ring-1 ring-white/60 backdrop-blur-md md:p-8">
           <h2 className="mb-5 flex items-center gap-4 font-serif text-xl font-semibold text-brand-700">
             <span className="h-px flex-1 bg-brand-300" aria-hidden />
-            <span>Хіти меню</span>
+            <span>Популярні страви</span>
             <span className="h-px flex-1 bg-brand-300" aria-hidden />
           </h2>
           <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -54,8 +61,9 @@ export function RestaurantPage() {
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {menuSections.map((section) => (
             <section
+              id={section.id}
               key={section.id}
-              className="rounded-2xl bg-white/85 p-6 shadow-lg ring-1 ring-white/60 backdrop-blur-md"
+              className="scroll-mt-6 rounded-2xl bg-white/85 p-6 shadow-lg ring-1 ring-white/60 backdrop-blur-md md:scroll-mt-8"
             >
               <h2 className="mb-1 border-b border-brand-200/80 pb-3 font-serif text-xl font-semibold text-brand-700">
                 {section.title}
