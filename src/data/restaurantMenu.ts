@@ -40,7 +40,7 @@ export const menuSections: MenuSection[] = [
         name: 'Вівсяна каша',
         description: 'зі свіжими фруктами',
         price: 160,
-        image: 'images/dishes/vivsjana-kasha-zi-svizhymy-fruktamy.png',
+        image: 'images/dishes/vivsjana-kasha-zi-svizhymy-fruktamy.webp',
       },
       {
         name: 'Сирники',
@@ -201,7 +201,7 @@ export const menuSections: MenuSection[] = [
       { name: 'Паста з креветками', price: 300, image: 'images/dishes/pasta-z-krevetkamy.webp' },
       { name: 'Вареники з картоплею', price: 160 },
       { name: 'Вареники з сиром та кропом', price: 160 },
-      { name: 'Вареники з вишнею', price: 160, image: 'images/dishes/varenyky-z-vyshneju.png' },
+      { name: 'Вареники з вишнею', price: 160, image: 'images/dishes/varenyky-z-vyshneju.webp' },
       { name: 'Пельмені', price: 200 },
       {
         name: 'Банош',
