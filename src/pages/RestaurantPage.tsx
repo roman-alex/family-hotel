@@ -14,7 +14,7 @@ export function RestaurantPage() {
   }, [])
 
   return (
-    <div className="relative min-h-screen">
+    <div id="top" className="relative min-h-screen">
       <FixedPageBackground />
 
       <header className="border-b border-white/50 bg-white/75 px-4 py-4 shadow-sm shadow-brand-200/20 backdrop-blur-md">
@@ -81,6 +81,28 @@ export function RestaurantPage() {
       <footer className="relative border-t border-white/40 bg-white/50 px-4 py-8 text-center text-sm text-brand-600/60 backdrop-blur-sm">
         © {new Date().getFullYear()}, {site.fullName}
       </footer>
+
+      <a
+        href="#top"
+        className="fixed right-4 bottom-4 z-50 flex h-11 w-11 items-center justify-center rounded-full border border-brand-200 bg-white/90 text-brand-700 shadow-lg backdrop-blur-sm transition hover:border-brand-300 hover:bg-white md:right-6 md:bottom-6"
+        aria-label="Повернутися вгору"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          className="h-5 w-5"
+          aria-hidden
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M4.5 15.75 12 8.25l7.5 7.5"
+          />
+        </svg>
+      </a>
     </div>
   )
 }
