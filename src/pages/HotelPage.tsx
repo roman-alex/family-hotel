@@ -166,16 +166,7 @@ export function HotelPage() {
         </div>
       </header>
 
-      <main className="relative mx-auto w-full max-w-4xl flex-1 px-4 py-8 pb-12 md:py-12">
-        <div className="text-center">
-          <p className="mb-1 text-sm font-medium uppercase tracking-[0.2em] text-brand-500">
-            Hotel
-          </p>
-          <h1 className="font-serif text-4xl font-bold text-brand-700 md:text-5xl">
-            Номери
-          </h1>
-        </div>
-
+      <main className="relative mx-auto w-full max-w-4xl flex-1 px-4 py-4 pb-12 lg:py-8">
         <section>
           <div className="mb-5 flex justify-end">
             <button
