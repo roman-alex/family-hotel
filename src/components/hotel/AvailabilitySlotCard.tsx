@@ -31,6 +31,9 @@ export function AvailabilitySlotCard({ slot }: AvailabilitySlotCardProps) {
               <p className="rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700 ring-1 ring-brand-200/70">
                 {slot.dateLabel}
               </p>
+              <p className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-brand-600 ring-1 ring-brand-200/70">
+                {slot.weekdayLabel}
+              </p>
             </div>
             <h2 className="font-serif text-2xl font-bold text-brand-700">
               {slot.title}

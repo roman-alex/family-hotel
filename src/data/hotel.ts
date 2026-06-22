@@ -39,6 +39,7 @@ export type HotelAvailabilityItem = {
   endDate: string
   nights: number
   priceLabel: string
+  weekdayLabel: string
   image?: string
   badges: string[]
 }

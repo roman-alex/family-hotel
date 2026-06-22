@@ -48,37 +48,37 @@ export function AvailabilityFilters({
           <p className="mb-1.5 hidden text-xs font-semibold uppercase tracking-[0.18em] text-brand-500 md:mb-2 md:block">
             Тип номера
           </p>
-          <div className="grid gap-2 sm:grid-cols-2">
+          <div className="grid grid-cols-2 gap-2">
             {categories.map((category) => (
               <label
                 key={category.id}
-                className="flex min-h-9 items-center gap-2.5 rounded-xl border border-brand-100 bg-white/75 px-3 py-1.5 text-sm font-medium text-brand-700 md:min-h-11 md:gap-3 md:py-2"
+                className="flex min-h-11 min-w-0 items-center gap-2 rounded-xl border border-brand-100 bg-white/75 px-2.5 py-2 text-[13px] leading-tight font-medium text-brand-700 md:min-h-11 md:gap-3 md:px-3 md:text-sm"
               >
                 <input
                   type="checkbox"
                   checked={value.categoryIds.includes(category.id)}
                   onChange={() => toggleCategory(category.id)}
-                  className="h-3.5 w-3.5 rounded border-brand-300 accent-brand-600 md:h-4 md:w-4"
+                  className="h-3.5 w-3.5 shrink-0 rounded border-brand-300 accent-brand-600 md:h-4 md:w-4"
                 />
-                <span>{category.title}</span>
+                <span className="min-w-0">{category.title}</span>
               </label>
             ))}
           </div>
         </div>
       </div>
 
-      <div className="mt-4 flex flex-col gap-3 border-t border-brand-100 pt-3 sm:flex-row sm:justify-end md:mt-5 md:pt-4">
+      <div className="mt-4 flex gap-3 border-t border-brand-100 pt-3 md:mt-5 md:justify-end md:pt-4">
         <button
           type="button"
           onClick={onReset}
-          className="rounded-full border border-brand-200 bg-white px-5 py-2 text-sm font-semibold text-brand-700 transition hover:border-brand-300 hover:bg-brand-50 md:py-2.5"
+          className="flex-1 rounded-full border border-brand-200 bg-white px-5 py-2 text-sm font-semibold text-brand-700 transition hover:border-brand-300 hover:bg-brand-50 md:flex-none md:py-2.5"
         >
           Скинути
         </button>
         <button
           type="button"
           onClick={onConfirm}
-          className="rounded-full bg-brand-500 px-5 py-2 text-sm font-semibold text-brand-800 transition hover:bg-brand-400 md:py-2.5"
+          className="flex-1 rounded-full bg-brand-500 px-5 py-2 text-sm font-semibold text-brand-800 transition hover:bg-brand-400 md:flex-none md:py-2.5"
         >
           Підтвердити
         </button>

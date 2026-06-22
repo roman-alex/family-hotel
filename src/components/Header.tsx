@@ -8,9 +8,7 @@ export function Header() {
   return (
     <header className="fixed top-0 right-0 left-0 z-50 border-b border-brand-100 bg-white/95 shadow-sm backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8">
-        <a href="#home">
-          <Logo size="sm" showText />
-        </a>
+        <Logo size="sm" showText />
 
         <nav className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (

@@ -63,6 +63,33 @@ export function HotelPage() {
     }
   }, [])
 
+  useEffect(() => {
+    if (!filtersOpen) {
+      return
+    }
+
+    const scrollY = window.scrollY
+    const previousBodyStyles = {
+      overflow: document.body.style.overflow,
+      position: document.body.style.position,
+      top: document.body.style.top,
+      width: document.body.style.width,
+    }
+
+    document.body.style.overflow = 'hidden'
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollY}px`
+    document.body.style.width = '100%'
+
+    return () => {
+      document.body.style.overflow = previousBodyStyles.overflow
+      document.body.style.position = previousBodyStyles.position
+      document.body.style.top = previousBodyStyles.top
+      document.body.style.width = previousBodyStyles.width
+      window.scrollTo(0, scrollY)
+    }
+  }, [filtersOpen])
+
   async function handleConfirmFilters() {
     setAppliedFilters(draftFilters)
     setFiltersOpen(false)
@@ -157,9 +184,7 @@ export function HotelPage() {
 
       <header className="border-b border-white/50 bg-white/75 px-4 py-4 shadow-sm shadow-brand-200/20 backdrop-blur-md">
         <div className="mx-auto flex max-w-4xl items-center justify-center">
-          <a href="/">
-            <Logo size="sm" showText />
-          </a>
+          <Logo size="sm" showText />
         </div>
       </header>
 

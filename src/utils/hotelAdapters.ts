@@ -21,6 +21,8 @@ const displayDateFormatter = new Intl.DateTimeFormat('uk-UA', {
   month: 'long',
 })
 
+const weekdayLabels = ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']
+
 const currencyFormatter = new Intl.NumberFormat('uk-UA', {
   maximumFractionDigits: 0,
 })
@@ -186,6 +188,7 @@ function toAvailabilityItem({
     priceLabel: priceSummary
       ? formatPriceLabel(priceSummary, nights)
       : 'Ціну уточнюйте',
+    weekdayLabel: formatWeekdayRange(range.startIso, range.endIso),
     image,
     badges: [
       `${nights} ${pluralizeNights(nights)}`,
@@ -298,6 +301,15 @@ function parseIsoDate(value: string) {
 
 function formatDisplayDate(value: string) {
   return displayDateFormatter.format(parseIsoDate(value))
+}
+
+function formatWeekdayRange(startIso: string, endIso: string) {
+  const startWeekday = weekdayLabels[parseIsoDate(startIso).getDay()]
+  const endWeekday = weekdayLabels[parseIsoDate(endIso).getDay()]
+
+  return startWeekday === endWeekday
+    ? startWeekday
+    : `${startWeekday}-${endWeekday}`
 }
 
 function pluralizeNights(count: number) {
