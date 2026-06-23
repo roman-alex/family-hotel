@@ -184,7 +184,7 @@ export const menuSections: MenuSection[] = [
     id: 'hot-dishes',
     title: 'Гарячі страви',
     items: [
-      { name: 'Картопля по-селянськи', price: 190 },
+      { name: 'Картопля по-селянськи', price: 190, image: 'images/dishes/kartoplja-po-seljansky.webp' },
       {
         name: 'Картопляне пюре',
         description: 'котлета, відбивна на вибір',
@@ -198,7 +198,7 @@ export const menuSections: MenuSection[] = [
       },
       { name: 'Паста карбонара', price: 260, image: 'images/dishes/pasta-karbonara.webp' },
       { name: 'Паста з креветками', price: 300, image: 'images/dishes/pasta-z-krevetkamy.webp' },
-      { name: 'Вареники з картоплею', price: 160 },
+      { name: 'Вареники з картоплею', price: 160, image: 'images/dishes/varenyky-z-kartopleju.webp' },
       { name: 'Вареники з сиром та кропом', price: 160 },
       { name: 'Вареники з вишнею', price: 160, image: 'images/dishes/varenyky-z-vyshneju.webp' },
       { name: 'Домашні пельмені', price: 200, image: 'images/dishes/domashni-pelmeni.webp' },

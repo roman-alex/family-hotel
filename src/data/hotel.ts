@@ -57,6 +57,8 @@ const priceSeasons = {
   autumn: { from: '08-30', to: '11-01' },
 } as const
 
+const sharedRoomAmenities = ['Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн']
+
 export const roomCategories: RoomCategory[] = [
   {
     id: 'double',
@@ -91,7 +93,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 1400 },
     ],
     capacity: { min: 1, max: 2 },
-    amenities: ['2 гості', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн', 'Холодильник'],
+    amenities: ['2 гості', ...sharedRoomAmenities],
   },
   {
     id: 'double-improved',
@@ -134,7 +136,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 1600 },
     ],
     capacity: { min: 1, max: 2 },
-    amenities: ['2 гості', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн'],
+    amenities: ['2 гості', ...sharedRoomAmenities, 'Холодильник'],
   },
   {
     id: 'triple-balcony',
@@ -169,7 +171,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 1900 },
     ],
     capacity: { min: 2, max: 3 },
-    amenities: ['3 гості', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн', 'Балкон'],
+    amenities: ['3 гості', ...sharedRoomAmenities],
   },
   {
     id: 'triple',
@@ -204,7 +206,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 2000 },
     ],
     capacity: { min: 2, max: 3 },
-    amenities: ['3 гості', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн'],
+    amenities: ['3 гості', ...sharedRoomAmenities],
   },
   {
     id: 'apartment-8',
@@ -247,7 +249,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 3800 },
     ],
     capacity: { min: 6, max: 8 },
-    amenities: ['До 8 гостей', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн', 'Кухня', 'Холодильник'],
+    amenities: ['До 8 гостей', ...sharedRoomAmenities, 'Кухня', 'Холодильник'],
   },
   {
     id: 'apartment-6',
@@ -282,7 +284,7 @@ export const roomCategories: RoomCategory[] = [
       { ...priceSeasons.autumn, price: 3200 },
     ],
     capacity: { min: 4, max: 6 },
-    amenities: ['До 6 гостей', 'Душ', 'Кондиціонер', 'Wi-Fi', 'TV', 'Парковка', 'Басейн', 'Холодильник'],
+    amenities: ['До 6 гостей', ...sharedRoomAmenities, 'Холодильник'],
   },
 ]
 
