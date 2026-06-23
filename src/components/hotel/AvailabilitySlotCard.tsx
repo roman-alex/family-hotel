@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState, type TouchEvent } from 'react'
 import { createPortal } from 'react-dom'
 import {
   FiCamera,
@@ -131,6 +131,11 @@ function RoomGallery({
   const [modalOpen, setModalOpen] = useState(false)
   const activeImage = images[activeIndex]
   const hasMultipleImages = images.length > 1
+  const swipeHandlers = useGallerySwipe({
+    enabled: hasMultipleImages,
+    onPrevious: showPreviousImage,
+    onNext: showNextImage,
+  })
 
   useEffect(() => {
     if (!modalOpen) {
@@ -175,11 +180,19 @@ function RoomGallery({
       <div className="relative">
         <button
           type="button"
-          onClick={() => setModalOpen(true)}
+          onClick={() => {
+            if (swipeHandlers.consumeSwipe()) {
+              return
+            }
+
+            setModalOpen(true)
+          }}
+          onTouchStart={swipeHandlers.onTouchStart}
+          onTouchEnd={swipeHandlers.onTouchEnd}
           className="block w-full cursor-zoom-in text-left"
           aria-label={`Відкрити галерею: ${title}`}
         >
-          <img
+          <AnimatedGalleryImage
             src={activeImage.src}
             alt={activeImage.alt}
             loading="lazy"
@@ -197,7 +210,7 @@ function RoomGallery({
             <button
               type="button"
               onClick={showPreviousImage}
-              className="absolute top-1/2 left-3 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-brand-700 opacity-65 shadow-sm ring-1 ring-white/50 backdrop-blur-md transition hover:bg-white/90 hover:opacity-100"
+              className="absolute top-1/2 left-3 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-brand-700 opacity-65 shadow-sm ring-1 ring-white/50 backdrop-blur-md transition hover:bg-white/90 hover:opacity-100 lg:flex"
               aria-label={`Попереднє фото: ${title}`}
             >
               <FiChevronLeft className="h-5 w-5" aria-hidden />
@@ -205,7 +218,7 @@ function RoomGallery({
             <button
               type="button"
               onClick={showNextImage}
-              className="absolute top-1/2 right-3 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-brand-700 opacity-65 shadow-sm ring-1 ring-white/50 backdrop-blur-md transition hover:bg-white/90 hover:opacity-100"
+              className="absolute top-1/2 right-3 hidden h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-brand-700 opacity-65 shadow-sm ring-1 ring-white/50 backdrop-blur-md transition hover:bg-white/90 hover:opacity-100 lg:flex"
               aria-label={`Наступне фото: ${title}`}
             >
               <FiChevronRight className="h-5 w-5" aria-hidden />
@@ -273,6 +286,11 @@ function GalleryModal({
 }) {
   const activeImage = images[activeIndex]
   const hasMultipleImages = images.length > 1
+  const swipeHandlers = useGallerySwipe({
+    enabled: hasMultipleImages,
+    onPrevious,
+    onNext,
+  })
 
   return createPortal(
     <div
@@ -306,8 +324,12 @@ function GalleryModal({
           </p>
         </div>
 
-        <div className="relative flex min-h-0 flex-1 items-center justify-center bg-brand-50">
-          <img
+        <div
+          className="relative flex min-h-0 flex-1 items-center justify-center bg-brand-50"
+          onTouchStart={swipeHandlers.onTouchStart}
+          onTouchEnd={swipeHandlers.onTouchEnd}
+        >
+          <AnimatedGalleryImage
             src={activeImage.src}
             alt={activeImage.alt}
             className="max-h-full max-w-full object-contain"
@@ -318,7 +340,7 @@ function GalleryModal({
               <button
                 type="button"
                 onClick={onPrevious}
-                className="absolute top-1/2 left-3 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-brand-700 opacity-65 shadow-sm ring-1 ring-white/50 backdrop-blur-md transition hover:bg-white/90 hover:opacity-100 md:left-5"
+                className="absolute top-1/2 left-3 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-brand-700 opacity-65 shadow-sm ring-1 ring-white/50 backdrop-blur-md transition hover:bg-white/90 hover:opacity-100 lg:flex"
                 aria-label={`Попереднє фото: ${title}`}
               >
                 <FiChevronLeft className="h-6 w-6" aria-hidden />
@@ -326,7 +348,7 @@ function GalleryModal({
               <button
                 type="button"
                 onClick={onNext}
-                className="absolute top-1/2 right-3 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-brand-700 opacity-65 shadow-sm ring-1 ring-white/50 backdrop-blur-md transition hover:bg-white/90 hover:opacity-100 md:right-5"
+                className="absolute top-1/2 right-3 hidden h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-white/80 text-brand-700 opacity-65 shadow-sm ring-1 ring-white/50 backdrop-blur-md transition hover:bg-white/90 hover:opacity-100 lg:flex"
                 aria-label={`Наступне фото: ${title}`}
               >
                 <FiChevronRight className="h-6 w-6" aria-hidden />
@@ -363,6 +385,90 @@ function GalleryModal({
     </div>,
     document.body,
   )
+}
+
+function AnimatedGalleryImage({
+  src,
+  alt,
+  className,
+  loading,
+}: {
+  src: string
+  alt: string
+  className: string
+  loading?: 'eager' | 'lazy'
+}) {
+  return (
+    <img
+      key={src}
+      src={src}
+      alt={alt}
+      loading={loading}
+      className={`${className} gallery-image-enter`}
+    />
+  )
+}
+
+function useGallerySwipe({
+  enabled,
+  onPrevious,
+  onNext,
+}: {
+  enabled: boolean
+  onPrevious: () => void
+  onNext: () => void
+}) {
+  const touchStartRef = useRef<{ x: number; y: number } | null>(null)
+  const didSwipeRef = useRef(false)
+
+  function handleTouchStart(event: TouchEvent<HTMLElement>) {
+    if (!enabled) {
+      return
+    }
+
+    const touch = event.changedTouches[0]
+    didSwipeRef.current = false
+    touchStartRef.current = { x: touch.clientX, y: touch.clientY }
+  }
+
+  function handleTouchEnd(event: TouchEvent<HTMLElement>) {
+    if (!enabled || !touchStartRef.current) {
+      return
+    }
+
+    const touch = event.changedTouches[0]
+    const deltaX = touch.clientX - touchStartRef.current.x
+    const deltaY = touch.clientY - touchStartRef.current.y
+    touchStartRef.current = null
+
+    if (Math.abs(deltaX) < 45 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) {
+      return
+    }
+
+    if (deltaX > 0) {
+      didSwipeRef.current = true
+      onPrevious()
+      return
+    }
+
+    didSwipeRef.current = true
+    onNext()
+  }
+
+  function consumeSwipe() {
+    if (!didSwipeRef.current) {
+      return false
+    }
+
+    didSwipeRef.current = false
+    return true
+  }
+
+  return {
+    consumeSwipe,
+    onTouchStart: handleTouchStart,
+    onTouchEnd: handleTouchEnd,
+  }
 }
 
 function isGuestsBadge(badge: string) {
