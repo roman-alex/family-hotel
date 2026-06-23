@@ -144,6 +144,24 @@ export const roomCategories: RoomCategory[] = [
     description:
       'Панорамні вікна та неймовірний вигляд на річку з власного балкона створюють ідеальні умови для ранкової кави чи вечірнього відпочинку. Ідеальний варіант для сім’ї: номер обладнаний двоспальним ліжком та розкладною софою.',
     image: asset('images/room-exterior.png'),
+    images: [
+      {
+        src: asset('images/rooms/triple-balcony/01.webp'),
+        alt: 'Спальня тримісного номера з балконом',
+      },
+      {
+        src: asset('images/rooms/triple-balcony/02.webp'),
+        alt: 'Інтерʼєр тримісного номера з балконом',
+      },
+      {
+        src: asset('images/rooms/triple-balcony/04.webp'),
+        alt: 'Санвузол тримісного номера з балконом',
+      },
+      {
+        src: asset('images/rooms/triple-balcony/03.webp'),
+        alt: 'Ліжко у тримісному номері з балконом',
+      },
+    ],
     priceFrom: 1900,
     prices: [
       { ...priceSeasons.early, price: 1900 },

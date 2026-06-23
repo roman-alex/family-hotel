@@ -160,24 +160,24 @@ export function HotelPage() {
     <div className="relative flex min-h-screen flex-col">
       <FixedPageBackground />
 
-      <header className="border-b border-white/50 bg-white/75 px-4 py-4 shadow-sm shadow-brand-200/20 backdrop-blur-md">
+      <header className="border-b border-white/50 bg-white/75 px-4 py-3 shadow-sm shadow-brand-200/20 backdrop-blur-md sm:py-4">
         <div className="mx-auto flex max-w-4xl items-center justify-center">
           <Logo size="sm" showText />
         </div>
       </header>
 
-      <main className="relative mx-auto w-full max-w-4xl flex-1 px-4 py-4 pb-12 lg:py-8">
+      <main className="relative mx-auto w-full max-w-4xl flex-1 px-4 pt-3 pb-12 sm:pt-4 lg:py-8">
         <section>
-          <div className="mb-5 flex justify-end">
+          <div className="mb-3 flex justify-end sm:mb-5">
             <button
               type="button"
               onClick={handleOpenFilters}
-              className="relative inline-flex h-11 w-11 items-center justify-center rounded-full bg-white/90 text-brand-700 shadow-lg ring-1 ring-white/70 backdrop-blur-md transition hover:bg-brand-50"
+              className="relative inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-brand-700 shadow-md ring-1 ring-white/70 backdrop-blur-md transition hover:bg-brand-50 sm:h-11 sm:w-11 sm:shadow-lg"
               aria-label="Фільтри"
             >
-              <FiFilter className="h-5 w-5" aria-hidden />
+              <FiFilter className="h-4 w-4 sm:h-5 sm:w-5" aria-hidden />
               {activeFilterCount > 0 && (
-                <span className="absolute -top-1 -right-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-brand-500 px-1 text-xs font-bold text-brand-800 ring-2 ring-white">
+                <span className="absolute -top-1 -right-1 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand-500 px-1 text-[10px] font-bold text-brand-800 ring-2 ring-white sm:h-5 sm:min-w-5 sm:text-xs">
                   {activeFilterCount}
                 </span>
               )}
