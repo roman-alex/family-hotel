@@ -64,6 +64,7 @@ export function getAvailableCategoryItemsForRange(
             fallbackPricePerNight: localCategory?.priceFrom,
             prices: localCategory?.prices || [],
             image: localCategory?.image,
+            images: localCategory?.images,
             capacityLabel: localCategory
               ? `${localCategory.capacity.max} гостей`
               : undefined,
@@ -152,6 +153,7 @@ function toAvailabilityItem({
   fallbackPricePerNight,
   prices,
   image,
+  images,
   capacityLabel,
   amenities,
   range,
@@ -162,6 +164,7 @@ function toAvailabilityItem({
   fallbackPricePerNight?: number
   prices: SeasonalPrice[]
   image?: string
+  images?: RoomCategory['images']
   capacityLabel?: string
   amenities: string[]
   range: CategoryAvailabilityRange
@@ -190,6 +193,7 @@ function toAvailabilityItem({
       : 'Ціну уточнюйте',
     weekdayLabel: formatWeekdayRange(range.startIso, range.endIso),
     image,
+    images,
     badges: [
       `${nights} ${pluralizeNights(nights)}`,
       ...(capacityLabel ? [capacityLabel] : []),

@@ -49,6 +49,7 @@ export function RoomsPage() {
                 title: room.title,
                 description: room.description,
                 image: room.image,
+                images: room.images,
                 priceLabel: `${currencyFormatter.format(getSeasonalPrice(room))} ₴ / доба`,
                 badges: room.amenities,
               }}

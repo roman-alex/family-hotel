@@ -11,6 +11,11 @@ export type SeasonalPrice = {
   price: number
 }
 
+export type RoomImage = {
+  src: string
+  alt: string
+}
+
 export type RoomCategory = {
   id: string
   categoryId: number
@@ -18,6 +23,7 @@ export type RoomCategory = {
   subtitle: string
   description: string
   image?: string
+  images?: RoomImage[]
   priceFrom: number
   prices: SeasonalPrice[]
   capacity: {
@@ -41,6 +47,7 @@ export type HotelAvailabilityItem = {
   priceLabel: string
   weekdayLabel: string
   image?: string
+  images?: RoomImage[]
   badges: string[]
 }
 
@@ -76,6 +83,32 @@ export const roomCategories: RoomCategory[] = [
     description:
       'Комфортний номер з окремим входом і затишною приватною терасою для відпочинку та приємного проведення часу на свіжому повітрі.',
     image: asset('images/room-exterior.png'),
+    images: [
+      {
+        src: asset('images/rooms/double-improved/01.webp'),
+        alt: 'Спальня двомісного покращеного номера',
+      },
+      {
+        src: asset('images/rooms/double-improved/02.webp'),
+        alt: 'Ліжко у двомісному покращеному номері',
+      },
+      {
+        src: asset('images/rooms/double-improved/03.webp'),
+        alt: 'Інтерʼєр двомісного покращеного номера',
+      },
+      {
+        src: asset('images/rooms/double-improved/04.webp'),
+        alt: 'Вхідна зона двомісного покращеного номера',
+      },
+      {
+        src: asset('images/rooms/double-improved/05.webp'),
+        alt: 'Коридор двомісного покращеного номера',
+      },
+      {
+        src: asset('images/rooms/double-improved/06.webp'),
+        alt: 'Вікно у двомісному покращеному номері',
+      },
+    ],
     priceFrom: 1600,
     prices: [
       { ...priceSeasons.early, price: 1600 },
