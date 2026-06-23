@@ -14,7 +14,6 @@ export type MenuSection = {
 export const menuHits: MenuItem[] = [
   { name: 'Борщ', price: 220, image: 'images/dishes/borshch.webp' },
   { name: 'Банош', price: 230, image: 'images/dishes/banosh.webp' },
-  { name: 'Стейк зі свинини', price: 250 },
   { name: 'Паста з креветками', price: 300, image: 'images/dishes/pasta-z-krevetkamy.webp' },
   { name: 'Цезарь', price: 280, image: 'images/dishes/cezar.webp' },
 ]
