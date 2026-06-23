@@ -3,11 +3,22 @@ import { FixedPageBackground } from '../components/FixedPageBackground'
 import { Logo } from '../components/Logo'
 import { AvailabilitySlotCard } from '../components/hotel/AvailabilitySlotCard'
 import { site } from '../data/content'
-import { roomCategories } from '../data/hotel'
+import { roomCategories, type RoomCategory } from '../data/hotel'
 
 const currencyFormatter = new Intl.NumberFormat('uk-UA', {
   maximumFractionDigits: 0,
 })
+
+function getSeasonalPrice(room: RoomCategory, date = new Date()) {
+  const monthDay = `${String(date.getMonth() + 1).padStart(2, '0')}-${String(
+    date.getDate(),
+  ).padStart(2, '0')}`
+
+  return (
+    room.prices.find((season) => monthDay >= season.from && monthDay < season.to)
+      ?.price ?? room.priceFrom
+  )
+}
 
 export function RoomsPage() {
   useEffect(() => {
@@ -38,7 +49,7 @@ export function RoomsPage() {
                 title: room.title,
                 description: room.description,
                 image: room.image,
-                priceLabel: `від ${currencyFormatter.format(room.priceFrom)} ₴ / доба`,
+                priceLabel: `${currencyFormatter.format(getSeasonalPrice(room))} ₴ / доба`,
                 badges: room.amenities,
               }}
               showStayDetails={false}
