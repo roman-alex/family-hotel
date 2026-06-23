@@ -66,6 +66,24 @@ export const roomCategories: RoomCategory[] = [
     description:
       'Просторий номер у загальному корпусі готелю з видом на внутрішній двір та всіма необхідними зручностями для комфортного відпочинку.',
     image: asset('images/room-interior.png'),
+    images: [
+      {
+        src: asset('images/rooms/double/01.webp'),
+        alt: 'Спальня двомісного стандартного номера',
+      },
+      {
+        src: asset('images/rooms/double/02.webp'),
+        alt: 'Інтерʼєр двомісного стандартного номера',
+      },
+      {
+        src: asset('images/rooms/double/03.webp'),
+        alt: 'Ліжко у двомісному стандартному номері',
+      },
+      {
+        src: asset('images/rooms/double/04.webp'),
+        alt: 'Санвузол двомісного стандартного номера',
+      },
+    ],
     priceFrom: 1400,
     prices: [
       { ...priceSeasons.early, price: 1400 },
@@ -143,6 +161,24 @@ export const roomCategories: RoomCategory[] = [
     description:
       'Затишний номер для сімейного відпочинку. Оснащений двоспальним ліжком для батьків та розкладною софою для дітей, забезпечуючи комфортне розміщення всієї родини.',
     image: asset('images/room-interior.png'),
+    images: [
+      {
+        src: asset('images/rooms/triple/02.webp'),
+        alt: 'Інтерʼєр тримісного номера без балкону',
+      },
+      {
+        src: asset('images/rooms/triple/03.webp'),
+        alt: 'Ліжко у тримісному номері без балкону',
+      },
+      {
+        src: asset('images/rooms/triple/01.webp'),
+        alt: 'Спальня тримісного номера без балкону',
+      },
+      {
+        src: asset('images/rooms/triple/04.webp'),
+        alt: 'Санвузол тримісного номера без балкону',
+      },
+    ],
     priceFrom: 1600,
     prices: [
       { ...priceSeasons.early, price: 1600 },
@@ -160,6 +196,32 @@ export const roomCategories: RoomCategory[] = [
     description:
       'Просторі апартаменти для великої родини або компанії друзів. Складаються з трьох окремих спалень з двоспальними ліжками, просторого холу з диваном та обідньою зоною, облаштованої кухні й двох санвузлів.',
     image: asset('images/room-interior.png'),
+    images: [
+      {
+        src: asset('images/rooms/apartment-8/01.webp'),
+        alt: 'Спальня в апартаментах до 8 осіб',
+      },
+      {
+        src: asset('images/rooms/apartment-8/02.webp'),
+        alt: 'Зона відпочинку в апартаментах до 8 осіб',
+      },
+      {
+        src: asset('images/rooms/apartment-8/03.webp'),
+        alt: 'Кухня в апартаментах до 8 осіб',
+      },
+      {
+        src: asset('images/rooms/apartment-8/04.webp'),
+        alt: 'Санвузол в апартаментах до 8 осіб',
+      },
+      {
+        src: asset('images/rooms/apartment-8/05.webp'),
+        alt: 'Інтерʼєр апартаментів до 8 осіб',
+      },
+      {
+        src: asset('images/rooms/apartment-8/06.webp'),
+        alt: 'Кімната в апартаментах до 8 осіб',
+      },
+    ],
     priceFrom: 3800,
     prices: [
       { ...priceSeasons.early, price: 3800 },
@@ -177,6 +239,24 @@ export const roomCategories: RoomCategory[] = [
     description:
       'Затишні сімейні апартаменти з двома окремими кімнатами, кожна з двоспальним ліжком та власним санвузлом. Просторий хол з великим диваном створює комфортні умови для відпочинку всієї родини.',
     image: asset('images/room-exterior.png'),
+    images: [
+      {
+        src: asset('images/rooms/apartment-6/04.webp'),
+        alt: 'Кімната в апартаментах до 6 осіб',
+      },
+      {
+        src: asset('images/rooms/apartment-6/01.webp'),
+        alt: 'Спальня в апартаментах до 6 осіб',
+      },
+      {
+        src: asset('images/rooms/apartment-6/02.webp'),
+        alt: 'Інтерʼєр апартаментів до 6 осіб',
+      },
+      {
+        src: asset('images/rooms/apartment-6/03.webp'),
+        alt: 'Друга спальня в апартаментах до 6 осіб',
+      },
+    ],
     priceFrom: 3200,
     prices: [
       { ...priceSeasons.early, price: 3200 },
