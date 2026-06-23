@@ -290,6 +290,7 @@ function GalleryModal({
     enabled: hasMultipleImages,
     onPrevious,
     onNext,
+    onSwipeDown: onClose,
   })
 
   return createPortal(
@@ -413,10 +414,12 @@ function useGallerySwipe({
   enabled,
   onPrevious,
   onNext,
+  onSwipeDown,
 }: {
   enabled: boolean
   onPrevious: () => void
   onNext: () => void
+  onSwipeDown?: () => void
 }) {
   const touchStartRef = useRef<{ x: number; y: number } | null>(null)
   const didSwipeRef = useRef(false)
@@ -440,6 +443,16 @@ function useGallerySwipe({
     const deltaX = touch.clientX - touchStartRef.current.x
     const deltaY = touch.clientY - touchStartRef.current.y
     touchStartRef.current = null
+
+    if (
+      onSwipeDown &&
+      deltaY > 70 &&
+      Math.abs(deltaY) > Math.abs(deltaX) * 1.4
+    ) {
+      didSwipeRef.current = true
+      onSwipeDown()
+      return
+    }
 
     if (Math.abs(deltaX) < 45 || Math.abs(deltaX) < Math.abs(deltaY) * 1.2) {
       return
