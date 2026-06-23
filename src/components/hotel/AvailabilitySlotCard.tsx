@@ -228,7 +228,7 @@ function RoomGallery({
       </div>
 
       {hasMultipleImages && (
-        <div className="flex min-w-0 touch-pan-x gap-2 overflow-x-auto overscroll-x-contain bg-brand-50 p-3 md:rounded-b-xl">
+        <div className="flex min-w-0 gap-2 overflow-x-auto overscroll-x-contain bg-brand-50 p-3 md:rounded-b-xl">
           {images.map((image, index) => (
             <button
               key={image.src}
@@ -358,7 +358,7 @@ function GalleryModal({
         </div>
 
         {hasMultipleImages && (
-          <div className="flex min-w-0 touch-pan-x gap-2 overflow-x-auto overscroll-x-contain border-t border-brand-100 bg-white p-3">
+          <div className="flex min-w-0 gap-2 overflow-x-auto overscroll-x-contain border-t border-brand-100 bg-white p-3">
             {images.map((image, index) => (
               <button
                 key={image.src}
