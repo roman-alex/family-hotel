@@ -4,6 +4,7 @@ type ServiceCardProps = {
   title: string
   description: string
   cta: string
+  ctaHref?: string
   image: string
   imageAlt: string
   secondaryImage?: string
@@ -15,6 +16,7 @@ export function ServiceCard({
   title,
   description,
   cta,
+  ctaHref,
   image,
   imageAlt,
   secondaryImage,
@@ -65,7 +67,7 @@ export function ServiceCard({
         </h3>
         <p className="mb-6 leading-relaxed text-brand-600/70">{description}</p>
         <a
-          href={`tel:${site.phone}`}
+          href={ctaHref ?? `tel:${site.phone}`}
           className="inline-flex items-center gap-2 font-semibold text-brand-600 transition hover:text-brand-700"
         >
           {cta}

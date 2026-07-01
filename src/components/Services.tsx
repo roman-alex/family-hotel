@@ -21,6 +21,7 @@ export function Services() {
               title={service.title}
               description={service.description}
               cta={service.cta}
+              ctaHref={'ctaHref' in service ? service.ctaHref : undefined}
               image={service.image}
               imageAlt={service.imageAlt}
               secondaryImage={'secondaryImage' in service ? service.secondaryImage : undefined}

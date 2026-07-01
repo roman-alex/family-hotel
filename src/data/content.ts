@@ -56,6 +56,7 @@ export const services = [
     description:
       'Затишні двомісні та покращені номери з дерев\'яним оздобленням, кондиціонером та сучасним інтер\'єром. Кожен номер має окрему терасу з меблями — ідеально для ранкової кави на свіжому повітрі.',
     cta: 'Забронювати номер',
+    ctaHref: '/hotel',
     image: asset('images/room-interior.png'),
     imageAlt: 'Двомісний покращений номер',
     secondaryImage: asset('images/room-exterior.png'),
@@ -67,6 +68,7 @@ export const services = [
     description:
       'Стильний ресторан з панорамними вікнами та видом на зелені пагорби. Смачна домашня кухня, затишна атмосфера та комфортна тераса для сніданків, обідів і вечерь.',
     cta: 'Дізнатися більше',
+    ctaHref: '/restaurant',
     image: asset('images/restaurant.png'),
     imageAlt: 'Ресторан з панорамним видом',
   },
