@@ -171,6 +171,7 @@ export const menuSections: MenuSection[] = [
         name: 'Стейк зі свинини',
         description: '100 г + соус',
         price: 250,
+        image: 'images/dishes/stejk-zi-svynyny.webp',
       },
       {
         name: "М'ясна дошка",
