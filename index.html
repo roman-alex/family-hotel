@@ -15,57 +15,6 @@
       content="FAMILY HOTEL — база відпочинку в Хмельницькій області, с. Куражин. Номери, ресторан, дитячий майданчик. Бронювання: +38 (098) 061 52 28."
     />
     <title>FAMILY HOTEL — База відпочинку, с. Куражин</title>
-    <script>
-      ;(function () {
-        var path = window.location.pathname
-        var search = window.location.search
-        var searchParams = new URLSearchParams(search)
-        var pwa = searchParams.get('pwa')
-
-        if (search.indexOf('?/hotel') === 0 || pwa === 'booking') {
-          path = '/hotel'
-        } else if (
-          search.indexOf('?/restaurant') === 0 ||
-          pwa === 'restaurant'
-        ) {
-          path = '/restaurant'
-        }
-
-        var app = {
-          manifest: '/manifests/home.webmanifest',
-          appleIcon: '/icons/home/apple-touch-icon.png',
-          appleTitle: 'FAMILY HOTEL',
-          pageTitle: 'FAMILY HOTEL',
-        }
-
-        if (path.indexOf('/hotel') === 0) {
-          app = {
-            manifest: '/manifests/booking.webmanifest',
-            appleIcon: '/icons/booking/apple-touch-icon.png',
-            appleTitle: 'Family Booking',
-            pageTitle: 'Family Booking',
-          }
-        } else if (path.indexOf('/restaurant') === 0) {
-          app = {
-            manifest: '/manifests/restaurant.webmanifest',
-            appleIcon: '/icons/restaurant/apple-touch-icon.png',
-            appleTitle: 'Family Restaurant',
-            pageTitle: 'Family Restaurant',
-          }
-        }
-
-        document
-          .getElementById('pwa-manifest')
-          .setAttribute('href', app.manifest)
-        document
-          .getElementById('apple-touch-icon')
-          .setAttribute('href', app.appleIcon)
-        document
-          .getElementById('apple-mobile-web-app-title')
-          .setAttribute('content', app.appleTitle)
-        document.title = app.pageTitle
-      })()
-    </script>
   </head>
   <body>
     <div id="root"></div>
@@ -85,15 +34,6 @@
             l.pathname.slice(0, -1) + decoded + l.hash,
           )
           return
-        }
-
-        var params = new URLSearchParams(l.search)
-        var pwa = params.get('pwa')
-
-        if (pwa === 'booking') {
-          window.history.replaceState(null, null, '/hotel' + l.hash)
-        } else if (pwa === 'restaurant') {
-          window.history.replaceState(null, null, '/restaurant' + l.hash)
         }
       })(window.location)
     </script>
