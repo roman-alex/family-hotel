@@ -82,8 +82,8 @@ export const menuSections: MenuSection[] = [
         price: 220,
         image: 'images/dishes/borshch.webp',
       },
-      { name: 'Солянка', price: 200 },
-      { name: 'Бограч', price: 240 },
+      { name: 'Солянка', price: 200, image: 'images/dishes/soljanka.webp' },
+      { name: 'Бограч', price: 240, image: 'images/dishes/bograch.webp' },
       {
         name: 'Курячий бульйон',
         price: 160,
