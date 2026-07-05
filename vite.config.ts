@@ -13,68 +13,20 @@ export default defineConfig({
       includeAssets: [
         'favicon.svg',
         'logo.svg',
-        'icons/icon-192.png',
-        'icons/icon-512.png',
-        'icons/apple-touch-icon.png',
+        'icons/home/icon-192.png',
+        'icons/home/icon-512.png',
+        'icons/home/apple-touch-icon.png',
+        'icons/booking/icon-192.png',
+        'icons/booking/icon-512.png',
+        'icons/booking/apple-touch-icon.png',
+        'icons/restaurant/icon-192.png',
+        'icons/restaurant/icon-512.png',
+        'icons/restaurant/apple-touch-icon.png',
+        'manifests/home.webmanifest',
+        'manifests/booking.webmanifest',
+        'manifests/restaurant.webmanifest',
       ],
-      manifest: {
-        name: 'FAMILY HOTEL',
-        short_name: 'Family',
-        description:
-          'FAMILY HOTEL — база відпочинку в Хмельницькій області, с. Куражин.',
-        lang: 'uk',
-        start_url: '/',
-        scope: '/',
-        display: 'standalone',
-        background_color: '#EEF7FF',
-        theme_color: '#96C5F7',
-        icons: [
-          {
-            src: '/icons/icon-192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: '/icons/icon-512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
-          {
-            src: '/icons/icon-512.png',
-            sizes: '512x512',
-            type: 'image/png',
-            purpose: 'maskable',
-          },
-        ],
-        shortcuts: [
-          {
-            name: 'Меню ресторану',
-            short_name: 'Меню',
-            description: 'Відкрити меню ресторану FAMILY HOTEL',
-            url: '/restaurant',
-            icons: [
-              {
-                src: '/icons/icon-192.png',
-                sizes: '192x192',
-                type: 'image/png',
-              },
-            ],
-          },
-          {
-            name: 'Вільні номери',
-            short_name: 'Номери',
-            description: 'Переглянути доступні номери FAMILY HOTEL',
-            url: '/hotel',
-            icons: [
-              {
-                src: '/icons/icon-192.png',
-                sizes: '192x192',
-                type: 'image/png',
-              },
-            ],
-          },
-        ],
-      },
+      manifest: false,
       workbox: {
         runtimeCaching: [
           {

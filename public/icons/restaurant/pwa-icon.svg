@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <rect width="512" height="512" fill="#96C5F7"/>
+  <path d="M134 156 L256 78 L378 156" stroke="#2C4A6E" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="256" y="230" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700" fill="#2C4A6E">FAMILY</text>
+  <text x="256" y="300" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="62" font-weight="700" fill="#2C4A6E">HOTEL</text>
+  <path d="M142 346 C176 322 210 346 256 346 C302 346 336 322 370 346" stroke="#2C4A6E" stroke-width="8" stroke-linecap="round"/>
+  <path d="M142 382 C176 358 210 382 256 382 C302 382 336 358 370 382" stroke="#2C4A6E" stroke-width="8" stroke-linecap="round"/>
+  <text x="256" y="444" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="36" font-weight="700" letter-spacing="2" fill="#2C4A6E">restaurant</text>
+</svg>

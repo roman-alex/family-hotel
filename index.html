@@ -3,16 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link id="pwa-manifest" rel="manifest" href="/manifests/home.webmanifest" />
+    <link id="apple-touch-icon" rel="apple-touch-icon" href="/icons/home/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#96C5F7" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="FAMILY HOTEL" />
+    <meta id="apple-mobile-web-app-title" name="apple-mobile-web-app-title" content="FAMILY HOTEL" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta
       name="description"
       content="FAMILY HOTEL — база відпочинку в Хмельницькій області, с. Куражин. Номери, ресторан, дитячий майданчик. Бронювання: +38 (098) 061 52 28."
     />
+    <script>
+      ;(function () {
+        var path = window.location.pathname
+        var app = {
+          manifest: '/manifests/home.webmanifest',
+          appleIcon: '/icons/home/apple-touch-icon.png',
+          appleTitle: 'FAMILY HOTEL',
+        }
+
+        if (path.indexOf('/hotel') === 0) {
+          app = {
+            manifest: '/manifests/booking.webmanifest',
+            appleIcon: '/icons/booking/apple-touch-icon.png',
+            appleTitle: 'Booking',
+          }
+        } else if (path.indexOf('/restaurant') === 0) {
+          app = {
+            manifest: '/manifests/restaurant.webmanifest',
+            appleIcon: '/icons/restaurant/apple-touch-icon.png',
+            appleTitle: 'Restaurant',
+          }
+        }
+
+        document
+          .getElementById('pwa-manifest')
+          .setAttribute('href', app.manifest)
+        document
+          .getElementById('apple-touch-icon')
+          .setAttribute('href', app.appleIcon)
+        document
+          .getElementById('apple-mobile-web-app-title')
+          .setAttribute('content', app.appleTitle)
+      })()
+    </script>
     <title>FAMILY HOTEL — База відпочинку, с. Куражин</title>
   </head>
   <body>
