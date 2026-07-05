@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     statusBarStyle: 'default',
   },
   icons: {
-    icon: '/icons/booking/pwa-icon.svg',
+    icon: '/favicon.svg',
     apple: '/icons/booking/apple-touch-icon.png',
   },
   other: {
