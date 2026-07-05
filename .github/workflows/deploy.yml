@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
     steps:
       - uses: actions/checkout@v4
 
@@ -26,6 +28,11 @@ jobs:
           cache: npm
 
       - run: npm ci
+
+      - name: Check EasyMS module key
+        run: test -n "$NEXT_PUBLIC_EASYMS_RESERVATION_MODULE_KEY"
+        env:
+          NEXT_PUBLIC_EASYMS_RESERVATION_MODULE_KEY: ${{ secrets.NEXT_PUBLIC_EASYMS_RESERVATION_MODULE_KEY }}
 
       - name: Build
         run: npm run build
