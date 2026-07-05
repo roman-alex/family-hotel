@@ -2,13 +2,13 @@ import type { Metadata } from 'next'
 import { RestaurantRoute } from '../_routes/RestaurantRoute'
 
 export const metadata: Metadata = {
-  applicationName: 'Family Restaurant',
-  title: 'Family Restaurant',
+  applicationName: 'Family Menu',
+  title: 'Family Menu',
   description: 'Меню ресторану FAMILY HOTEL.',
   manifest: '/manifests/restaurant.webmanifest',
   appleWebApp: {
     capable: true,
-    title: 'Family Restaurant',
+    title: 'Family Menu',
     statusBarStyle: 'default',
   },
   icons: {

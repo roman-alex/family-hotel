@@ -7,7 +7,7 @@ import { MenuItemRow } from '../components/MenuItemRow'
 
 export function RestaurantPage() {
   useEffect(() => {
-    document.title = 'Family Restaurant'
+    document.title = 'Family Menu'
     return () => {
       document.title = `${site.name} — База відпочинку, с. Куражин`
     }

@@ -1,7 +1,7 @@
 {
   "id": "/restaurant/",
-  "name": "Family Restaurant",
-  "short_name": "Family Restaurant",
+  "name": "Family Menu",
+  "short_name": "Family Menu",
   "description": "Меню ресторану FAMILY HOTEL.",
   "lang": "uk",
   "start_url": "/restaurant/",
