@@ -28,6 +28,7 @@ export default defineConfig({
       ],
       manifest: false,
       workbox: {
+        navigateFallbackDenylist: [/^\/booking\//, /^\/restaurant-app\//],
         runtimeCaching: [
           {
             urlPattern: /^https:\/\/my\.easyms\.co\/api\/reservation\/pub\/.*$/,
