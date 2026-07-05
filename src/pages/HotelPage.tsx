@@ -46,7 +46,7 @@ export function HotelPage() {
     (appliedFilters.startDate && appliedFilters.endDate ? 1 : 0)
 
   useEffect(() => {
-    document.title = `Номери та доступність — ${site.name}`
+    document.title = 'Family Booking'
     return () => {
       document.title = `${site.name} — База відпочинку, с. Куражин`
     }

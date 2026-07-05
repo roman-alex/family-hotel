@@ -14,6 +14,7 @@
       name="description"
       content="FAMILY HOTEL — база відпочинку в Хмельницькій області, с. Куражин. Номери, ресторан, дитячий майданчик. Бронювання: +38 (098) 061 52 28."
     />
+    <title>FAMILY HOTEL — База відпочинку, с. Куражин</title>
     <script>
       ;(function () {
         var path = window.location.pathname
@@ -34,6 +35,7 @@
           manifest: '/manifests/home.webmanifest',
           appleIcon: '/icons/home/apple-touch-icon.png',
           appleTitle: 'FAMILY HOTEL',
+          pageTitle: 'FAMILY HOTEL',
         }
 
         if (path.indexOf('/hotel') === 0) {
@@ -41,12 +43,14 @@
             manifest: '/manifests/booking.webmanifest',
             appleIcon: '/icons/booking/apple-touch-icon.png',
             appleTitle: 'Family Booking',
+            pageTitle: 'Family Booking',
           }
         } else if (path.indexOf('/restaurant') === 0) {
           app = {
             manifest: '/manifests/restaurant.webmanifest',
             appleIcon: '/icons/restaurant/apple-touch-icon.png',
             appleTitle: 'Family Restaurant',
+            pageTitle: 'Family Restaurant',
           }
         }
 
@@ -59,9 +63,9 @@
         document
           .getElementById('apple-mobile-web-app-title')
           .setAttribute('content', app.appleTitle)
+        document.title = app.pageTitle
       })()
     </script>
-    <title>FAMILY HOTEL — База відпочинку, с. Куражин</title>
   </head>
   <body>
     <div id="root"></div>
