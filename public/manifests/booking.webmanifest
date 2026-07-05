@@ -1,10 +1,10 @@
 {
   "id": "/hotel",
-  "name": "FAMILY HOTEL Booking",
-  "short_name": "Booking",
+  "name": "Family Booking",
+  "short_name": "Family Booking",
   "description": "Вільні номери та бронювання FAMILY HOTEL.",
   "lang": "uk",
-  "start_url": "/hotel",
+  "start_url": "/?pwa=booking",
   "scope": "/",
   "display": "standalone",
   "background_color": "#EEF7FF",

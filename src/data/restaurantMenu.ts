@@ -89,7 +89,7 @@ export const menuSections: MenuSection[] = [
         price: 160,
         image: 'images/dishes/kurjachyj-buljon.webp',
       },
-      { name: 'Суп з фрикадельками', price: 160 },
+      { name: 'Суп з фрикадельками', price: 160, image: 'images/dishes/sup-z-frykadelkamy.webp' },
     ],
   },
   {

@@ -1,10 +1,10 @@
 {
   "id": "/restaurant",
-  "name": "FAMILY HOTEL Restaurant",
-  "short_name": "Restaurant",
+  "name": "Family Restaurant",
+  "short_name": "Family Restaurant",
   "description": "Меню ресторану FAMILY HOTEL.",
   "lang": "uk",
-  "start_url": "/restaurant",
+  "start_url": "/?pwa=restaurant",
   "scope": "/",
   "display": "standalone",
   "background_color": "#EEF7FF",

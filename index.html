@@ -17,6 +17,19 @@
     <script>
       ;(function () {
         var path = window.location.pathname
+        var search = window.location.search
+        var searchParams = new URLSearchParams(search)
+        var pwa = searchParams.get('pwa')
+
+        if (search.indexOf('?/hotel') === 0 || pwa === 'booking') {
+          path = '/hotel'
+        } else if (
+          search.indexOf('?/restaurant') === 0 ||
+          pwa === 'restaurant'
+        ) {
+          path = '/restaurant'
+        }
+
         var app = {
           manifest: '/manifests/home.webmanifest',
           appleIcon: '/icons/home/apple-touch-icon.png',
@@ -27,13 +40,13 @@
           app = {
             manifest: '/manifests/booking.webmanifest',
             appleIcon: '/icons/booking/apple-touch-icon.png',
-            appleTitle: 'Booking',
+            appleTitle: 'Family Booking',
           }
         } else if (path.indexOf('/restaurant') === 0) {
           app = {
             manifest: '/manifests/restaurant.webmanifest',
             appleIcon: '/icons/restaurant/apple-touch-icon.png',
-            appleTitle: 'Restaurant',
+            appleTitle: 'Family Restaurant',
           }
         }
 
@@ -67,6 +80,16 @@
             null,
             l.pathname.slice(0, -1) + decoded + l.hash,
           )
+          return
+        }
+
+        var params = new URLSearchParams(l.search)
+        var pwa = params.get('pwa')
+
+        if (pwa === 'booking') {
+          window.history.replaceState(null, null, '/hotel' + l.hash)
+        } else if (pwa === 'restaurant') {
+          window.history.replaceState(null, null, '/restaurant' + l.hash)
         }
       })(window.location)
     </script>
