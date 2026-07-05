@@ -1,6 +1,6 @@
 # FAMILY HOTEL
 
-Односторінковий сайт бази відпочинку «FAMILY HOTEL» (React + Vite + TypeScript + Tailwind).
+Сайт бази відпочинку «FAMILY HOTEL» (Next.js + React + TypeScript + Tailwind).
 
 ## Розробка
 
@@ -13,13 +13,13 @@ npm run dev
 
 ```bash
 npm run build
-npm run preview
+npm run start
 ```
 
 ## Деплой (GitHub Pages)
 
 1. Репозиторій → **Settings** → **Pages** → **Build and deployment** → **GitHub Actions**
-2. Після push у `main` workflow збирає сайт автоматично
+2. Після push у `main` workflow збирає Next static export у `out`
 
 Сайт: https://family-hotel.com.ua/
 

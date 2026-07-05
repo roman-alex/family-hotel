@@ -1,14 +1,16 @@
 {
-  "id": "/restaurant-app",
+  "id": "/restaurant/",
   "name": "Family Restaurant",
   "short_name": "Family Restaurant",
   "description": "Меню ресторану FAMILY HOTEL.",
   "lang": "uk",
-  "start_url": "/restaurant",
-  "scope": "/",
+  "start_url": "/restaurant/",
+  "scope": "/restaurant/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "background_color": "#EEF7FF",
   "theme_color": "#96C5F7",
+  "categories": ["food", "lifestyle"],
   "icons": [
     {
       "src": "/icons/restaurant/icon-192.png",
@@ -24,7 +26,7 @@
       "src": "/icons/restaurant/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ]
 }

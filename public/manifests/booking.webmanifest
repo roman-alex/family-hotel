@@ -1,14 +1,16 @@
 {
-  "id": "/booking",
+  "id": "/hotel/",
   "name": "Family Booking",
   "short_name": "Family Booking",
   "description": "Вільні номери та бронювання FAMILY HOTEL.",
   "lang": "uk",
-  "start_url": "/hotel",
-  "scope": "/",
+  "start_url": "/hotel/",
+  "scope": "/hotel/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "background_color": "#EEF7FF",
   "theme_color": "#96C5F7",
+  "categories": ["travel", "lifestyle"],
   "icons": [
     {
       "src": "/icons/booking/icon-192.png",
@@ -24,7 +26,7 @@
       "src": "/icons/booking/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ]
 }

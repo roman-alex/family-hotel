@@ -4,11 +4,6 @@ export type EasyMsDailyAvailability = {
   availability: number
 }
 
-const reservationModuleKey = import.meta.env.VITE_EASYMS_RESERVATION_MODULE_KEY
-const baseUrl = reservationModuleKey
-  ? `https://my.easyms.co/api/reservation/pub/${reservationModuleKey}`
-  : ''
-
 export async function getEasyMsDailyAvailability(
   startIso: string,
   endIso: string,
@@ -80,13 +75,20 @@ function toIsoDate(date: Date) {
 }
 
 async function requestEasyMs<T>(path: string): Promise<T> {
+  const reservationModuleKey = getReservationModuleKey()
+  const baseUrl = reservationModuleKey
+    ? `https://my.easyms.co/api/reservation/pub/${reservationModuleKey}`
+    : ''
+
   if (!baseUrl) {
     throw new Error('EasyMS reservation module key is not configured.')
   }
 
   const response = await fetch(`${baseUrl}${path}`, {
+    cache: 'no-store',
     headers: {
       Accept: 'application/json',
+      'Cache-Control': 'no-cache',
     },
   })
 
@@ -95,4 +97,8 @@ async function requestEasyMs<T>(path: string): Promise<T> {
   }
 
   return response.json() as Promise<T>
+}
+
+function getReservationModuleKey() {
+  return process.env.NEXT_PUBLIC_EASYMS_RESERVATION_MODULE_KEY
 }

@@ -7,8 +7,10 @@
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
+  "display_override": ["standalone", "minimal-ui"],
   "background_color": "#EEF7FF",
   "theme_color": "#96C5F7",
+  "categories": ["travel", "lifestyle"],
   "icons": [
     {
       "src": "/icons/home/icon-192.png",
@@ -24,7 +26,7 @@
       "src": "/icons/home/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     }
   ]
 }

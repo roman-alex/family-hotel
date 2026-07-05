@@ -30,11 +30,11 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_EASYMS_RESERVATION_MODULE_KEY: ${{ secrets.VITE_EASYMS_RESERVATION_MODULE_KEY }}
+          NEXT_PUBLIC_EASYMS_RESERVATION_MODULE_KEY: ${{ secrets.NEXT_PUBLIC_EASYMS_RESERVATION_MODULE_KEY }}
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: out
 
   deploy:
     needs: build
