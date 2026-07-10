@@ -178,6 +178,7 @@ export const menuSections: MenuSection[] = [
         description:
           'ребра, ковбаски гриль, шашлик курки, картопля по-селянськи, 2 соуси',
         price: 650,
+        image: 'images/dishes/mjasna-doshka.webp',
       },
     ],
   },
