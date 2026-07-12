@@ -158,7 +158,7 @@ export const menuSections: MenuSection[] = [
         name: 'Українська закуска',
         description:
           'сало зі спеціями, часник, цибуля, грінки, сальцеві кульки',
-        price: 350,
+        price: 400,
         image: 'images/dishes/ukrainska-zakuska.webp',
       },
       {
