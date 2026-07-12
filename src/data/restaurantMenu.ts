@@ -204,6 +204,7 @@ export const menuSections: MenuSection[] = [
       { name: 'Вареники з сиром та кропом', price: 160 },
       { name: 'Вареники з вишнею', price: 160, image: 'images/dishes/varenyky-z-vyshneju.webp' },
       { name: 'Домашні пельмені', price: 200, image: 'images/dishes/domashni-pelmeni.webp' },
+      { name: 'Бендерики з мʼясом', price: 250, image: 'images/dishes/benderyky-z-mjasom.webp' },
       {
         name: 'Банош',
         description: 'шкварки, сир кисломолочний домашній, сметана',
