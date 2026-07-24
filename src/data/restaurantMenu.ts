@@ -211,6 +211,7 @@ export const menuSections: MenuSection[] = [
         name: 'Картопляне пюре',
         description: 'котлета, відбивна на вибір',
         price: 230,
+        image: 'images/dishes/kartopljane-pjure.webp',
       },
     ],
   },
