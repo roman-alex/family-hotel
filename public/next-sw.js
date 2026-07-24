@@ -1,12 +1,13 @@
-const CACHE_NAME = 'family-hotel-next-static-v2'
+const CACHE_NAME = 'family-hotel-next-static-v3'
 const EASYMS_API_ORIGIN = 'https://my.easyms.co'
-const CACHEABLE_DESTINATIONS = new Set(['font', 'image', 'script', 'style'])
+const CACHEABLE_DESTINATIONS = new Set(['font', 'script', 'style'])
 const CACHE_PREFIXES_TO_DELETE = [
   'family-hotel-next-',
   'workbox-',
   'vite-',
   'easyms-api-network-only',
 ]
+const NETWORK_ONLY_PATH_PREFIXES = ['/restaurant/', '/images/dishes/']
 
 self.addEventListener('install', () => {
   self.skipWaiting()
@@ -43,6 +44,14 @@ self.addEventListener('fetch', (event) => {
   }
 
   if (
+    url.origin === self.location.origin &&
+    NETWORK_ONLY_PATH_PREFIXES.some((prefix) => url.pathname.startsWith(prefix))
+  ) {
+    event.respondWith(fetch(new Request(request, { cache: 'no-store' })))
+    return
+  }
+
+  if (
     request.method !== 'GET' ||
     url.origin !== self.location.origin ||
     request.mode === 'navigate' ||
@@ -53,16 +62,23 @@ self.addEventListener('fetch', (event) => {
 
   event.respondWith(
     caches.open(CACHE_NAME).then(async (cache) => {
-      const cachedResponse = await cache.match(request)
-      const networkResponsePromise = fetch(request).then((networkResponse) => {
+      try {
+        const networkResponse = await fetch(request)
+
         if (networkResponse.ok) {
           cache.put(request, networkResponse.clone())
         }
 
         return networkResponse
-      })
+      } catch {
+        const cachedResponse = await cache.match(request)
 
-      return cachedResponse ?? networkResponsePromise
+        if (cachedResponse) {
+          return cachedResponse
+        }
+
+        throw new Error(`Network request failed for ${request.url}`)
+      }
     }),
   )
 })
