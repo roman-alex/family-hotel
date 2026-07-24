@@ -12,6 +12,7 @@ export type MenuSection = {
 }
 
 export const menuHits: MenuItem[] = [
+  { name: 'Бендерики з мʼясом', price: 250, image: 'images/dishes/benderyky-z-mjasom.webp' },
   { name: 'Борщ', price: 220, image: 'images/dishes/borshch.webp' },
   { name: 'Банош', price: 230, image: 'images/dishes/banosh.webp' },
   { name: 'Паста з креветками', price: 300, image: 'images/dishes/pasta-z-krevetkamy.webp' },
@@ -134,16 +135,6 @@ export const menuSections: MenuSection[] = [
     title: 'Закуски',
     items: [
       {
-        name: "М'ясне асорті",
-        description: 'сало копчене, асорті ковбасне, шинка',
-        price: 450,
-      },
-      {
-        name: 'Овочева нарізка',
-        description: 'помідори, огірок, перець, зелень',
-        price: 250,
-      },
-      {
         name: 'Помідори',
         description: 'з часником і зеленню',
         price: 180,
@@ -180,6 +171,16 @@ export const menuSections: MenuSection[] = [
         price: 650,
         image: 'images/dishes/mjasna-doshka.webp',
       },
+      {
+        name: "М'ясне асорті",
+        description: 'сало копчене, асорті ковбасне, шинка',
+        price: 450,
+      },
+      {
+        name: 'Овочева нарізка',
+        description: 'помідори, огірок, перець, зелень',
+        price: 250,
+      },
     ],
   },
   {
@@ -187,11 +188,6 @@ export const menuSections: MenuSection[] = [
     title: 'Гарячі страви',
     items: [
       { name: 'Картопля по-селянськи', price: 190, image: 'images/dishes/kartoplja-po-seljansky.webp' },
-      {
-        name: 'Картопляне пюре',
-        description: 'котлета, відбивна на вибір',
-        price: 230,
-      },
       {
         name: 'Гаряча пательня',
         description: 'картопля, свинина, цибуля, сир',
@@ -201,7 +197,7 @@ export const menuSections: MenuSection[] = [
       { name: 'Паста карбонара', price: 260, image: 'images/dishes/pasta-karbonara.webp' },
       { name: 'Паста з креветками', price: 300, image: 'images/dishes/pasta-z-krevetkamy.webp' },
       { name: 'Вареники з картоплею', price: 160, image: 'images/dishes/varenyky-z-kartopleju.webp' },
-      { name: 'Вареники з сиром та кропом', price: 160 },
+      { name: 'Вареники з сиром та кропом', price: 160, image: 'images/dishes/varenyky-z-kartopleju.webp'  },
       { name: 'Вареники з вишнею', price: 160, image: 'images/dishes/varenyky-z-vyshneju.webp' },
       { name: 'Домашні пельмені', price: 200, image: 'images/dishes/domashni-pelmeni.webp' },
       { name: 'Бендерики з мʼясом', price: 250, image: 'images/dishes/benderyky-z-mjasom.webp' },
@@ -210,6 +206,11 @@ export const menuSections: MenuSection[] = [
         description: 'шкварки, сир кисломолочний домашній, сметана',
         price: 230,
         image: 'images/dishes/banosh.webp',
+      },
+      {
+        name: 'Картопляне пюре',
+        description: 'котлета, відбивна на вибір',
+        price: 230,
       },
     ],
   },
